@@ -1,0 +1,170 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h1>Propuestas</h1>
+					<hr>
+					<div class="nuevo-registro"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h1>Nueva Propuesta</h1>
+					<form class="form-horizontal guardar-registro">
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="id">ID artículo</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="id" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="titulo">Título</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="titulo" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="descripcion">Descripción</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="descripcion" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="objetivo">Objetivo</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="objetivo" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="fecha">Fecha de publicación</label>
+							<div class="col-sm-7">
+								<input type="date" class="form-control inputForm" id="fecha" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="paginas">Número de páginas</label>
+							<div class="col-sm-7">
+								<input type="number" class="form-control inputForm" id="paginas" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="pais">País</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="pais" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="idioma">Idioma</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="idioma" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="autor">Autor</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="autor" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="coautor">Coautor</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="coautor" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="area">Área</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="area" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="disciplina">Disciplina</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="disciplina" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="subdisciplina">Subdisciplina</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="subdisciplina" required />
+							</div>
+						</div>
+						
+						<div class="col-sm-3 col-sm-offset-5">
+							<br>
+							<button type="button" class="btn btn-primary guardar">
+								Guardar
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Propuestas enviadas-------------------------------------------------------------------->
+	
+	<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<H5>Estatus</H5>
+					<button class="check circle checktext btn-ok">
+						<center>
+							✓
+						</center>
+					</button>
+					<button class="check circle checktext btn-process">
+						<center>
+							✓
+						</center>
+					</button>
+					<button class="check circle checktext btn-uncheck">
+						<center>
+							✓
+						</center>
+					</button>
+					<hr>
+					<h1>Comentarios</h1>
+					<br>
+					<div class="col-md-1">
+						<img src="https://dpstvy7p9whsy.cloudfront.net/a/1/bd1604164dd1969a2c57dba5236d3123/50.jpg?v=1379000370" alt="Smiley face" height="42" width="42">
+					</div>
+					<div class="col-md-11"></div><h5>Juan Perez<small> 20/09/16 13:44
+						<br>
+						Director de proyecto </small></h5>
+					<p>
+						Este texto es demasiado confuso
+					</p>
+					<hr>
+				
+
+				<!--<h3>Título: <small id="comment-titulo"></small></h3>
+				<h3>Texto: <small id="comment-texto"></small></h3>
+				<br>--></br>
+				<div class="comentarios ">
+					<div class="inserta-comentario"></div>
+				</div>
+				<!--<form class="col-sm-12 form-horizontal guardar-registro">
+
+				<div class="col-sm-3 col-sm-offset-5"></div>
+				</form>-->
+				<div class="">
+					<textarea class="form-control send-comment" placeholder="Tu comentario" rows="3"></textarea>
+					<br>
+					<button class="btn btn-comment" type="button">
+						Enviar <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+					</button>
+					<button class="btn btn-comment" type="button">
+						Adjuntar archivo <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+</div>

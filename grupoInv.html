@@ -1,0 +1,88 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h1>Grupos de Investigación</h1>
+					<hr>
+					<div class="nuevo-registro"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h1>Agregar grupo</h1>
+					<form class="form-horizontal guardar-registro">
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="id">Id Grupo</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="id" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="nombre">Nombre</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="usuario" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="organizacion">Organización</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="organizacion" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="fecha">Fecha de creación</label>
+							<div class="col-sm-7">
+								<input type="date" class="form-control inputForm" id="fecha" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="lider">Líder de grupo</label>
+							<div class="col-sm-7">
+								<label class="radio-inline">
+									<input type="radio" name="liderSi" id="liderSi" value="si">
+									Sí </label>
+								<label class="radio-inline">
+									<input type="radio" name="liderNo" id="liderNo" value="no">
+									No </label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label">Vinculación</label>
+							<div class="col-sm-7">
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="sectorP">Sector productivo</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="sectorP" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="sectorS">Sector social</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="sectorS" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="programa">Programa registrado</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="programa" required />
+							</div>
+						</div>
+						
+						<div class="col-sm-3 col-sm-offset-5">
+							<br>
+							<button type="button" class="btn btn-primary guardar">
+								Guardar
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

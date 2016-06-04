@@ -1,0 +1,161 @@
+<div class="container-fluid">
+
+	<div class="row">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h1>Patentes</h1>
+					<hr>
+					<div class="nuevo-registro"></div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<h1>Agregar patente</h1>
+					<form class="form-horizontal guardar-registro">
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="ubicacion">Ubicación de la patente</label>
+							<div class="col-sm-7">
+								<label class="radio-inline">
+									<input type="radio" name="ubicacion" id="ubicacionM" value="mexico">
+									En México </label>
+								<label class="radio-inline">
+									<input type="radio" name="ubicacion" id="ubicacionO" value="otro">
+									En otro país </label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="id">ID patente</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="id" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="tipo">Tipo de patente</label>
+							<div class="col-sm-7">
+								<label class="radio-inline">
+									<input type="radio" name="tipo" id="tipoP" value="patente">
+									Patente </label>
+								<label class="radio-inline">
+									<input type="radio" name="tipo" id="tipoDA" value="da">
+									Derecho de autor </label>
+								<label class="radio-inline">
+									<input type="radio" name="tipo" id="tipoDS" value="ds">
+									Desarrollo de software </label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="año">Año</label>
+							<div class="col-sm-7">
+								<input type="number" class="form-control inputForm" id="año" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="idP">ID Patente</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="idP" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="participacion">Tipo de participación</label>
+							<div class="col-sm-7">
+								<label class="radio-inline">
+									<input type="radio" name="participacion" id="participacionI" value="inventor">
+									Inventor </label>
+								<label class="radio-inline">
+									<input type="radio" name="participacion" id="participacionC" value="coinventor">
+									Coinventor </label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="nombre">Nombre o título</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="nombre" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="periodo">Periodo</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="periodo" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="estado">Estado</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="estado" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="tipo">Tipo</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="tipo" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="registro">Número de registro</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="registro" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="fechaC">Fecha de concesión</label>
+							<div class="col-sm-7">
+								<input type="date" class="form-control inputForm" id="fechaC" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="expediente">Expediente</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="expediente" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="fechaP">Fecha de presentación</label>
+							<div class="col-sm-7">
+								<input type="date" class="form-control inputForm" id="fechaP" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="clasificacion">Clasificación Internacional</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="clasificacion" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="titular">Nombre del titular</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="titular" required />
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="exploracion">Exploración Industrial</label>
+							<div class="col-sm-7">
+								<label class="radio-inline">
+									<input type="radio" name="exploracion" id="exploracionSi" value="si">
+									Sí </label>
+								<label class="radio-inline">
+									<input type="radio" name="exploracion" id="exploracionNo" value="no">
+									No </label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-sm-5 control-label" for="resumen">Resumen</label>
+							<div class="col-sm-7">
+								<input type="text" class="form-control inputForm" id="resumen" required />
+							</div>
+						</div>
+						
+						<div class="col-sm-3 col-sm-offset-5">
+							<br>
+							<button type="button" class="btn btn-primary guardar">
+								Guardar
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
