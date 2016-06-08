@@ -1,11 +1,14 @@
 <div class="container-fluid">
 
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-md-6">
 			<div class="panel panel-default">
 				<div class="panel-body">
 					<h1>Documentos subidos</h1>
 
+					<hr>
+
+					<h2>Obligatorios</h2>
 					<hr>
 
 					<div id="card" class="card card-block">
@@ -15,8 +18,12 @@
 						</p>
 						<a href="#" class="card-link">Descargar</a>
 
-					</div><br>
-						<div id="card" class="card card-block">
+					</div>
+					<br>
+
+					<h2>Auxiliares</h2>
+					<hr>
+					<div id="card" class="card card-block">
 						<h4 class="card-title">Documento 2</h4>
 						<p class="card-text">
 							Breve descripción del documento
@@ -25,8 +32,58 @@
 
 					</div>
 
+					<!--<h3>Título: <small id="comment-titulo"></small></h3>
+					<h3>Texto: <small id="comment-texto"></small></h3>
+					<br>--></br>
+					<div class="comentarios ">
+						<div class="inserta-comentario"></div>
+					</div>
+					<!--<form class="col-sm-12 form-horizontal guardar-registro">
+
+					<div class="col-sm-3 col-sm-offset-5"></div>
+					</form>-->
+
 				</div>
 			</div>
 		</div>
+	
+	<div class="col-md-6">
+		<div class="panel panel-default">
+			<div class="panel-body">
+				<div class="">
+
+					<h1>Agregar documento</h1>
+					<hr>
+					<textarea class="form-control send-comment" placeholder="Nombre" rows="1"></textarea>
+					<br>
+					<textarea class="form-control send-comment" placeholder="Descripcion" rows="3"></textarea>
+					<br>
+					<input type="file" name="adjunto" />
+					<br>
+
+					<form>
+						<input type="radio" name="documento_clase" value="obligatorio" checked>
+						Obligatorio
+						<br>
+						<input type="radio" name="documento_clase" value="auxiliar">
+						Auxiliar
+						<br>
+
+					</form>
+
+					<button
+					class="btn btn-comment pull-right" type="button">
+						Adjuntar archivo <span class="glyphicon glyphicon-upload" aria-hidden="true"></span>
+					</button>
+				</div>
+
+				<div class="col-sm-3 col-sm-offset-5">
+					<br>
+
+				</div>
+				</form>
+			</div>
+		</div>
 	</div>
+</div>
 </div>
