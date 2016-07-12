@@ -1,0 +1,664 @@
+<div class="sidebar-nav">
+	<div id="wrapper">
+		<div id="sidebar-wrapper">
+
+			<div class="navbar navbar-lateral navbar-default slidebar-nav" role="navigation">
+
+				<div class="navbar-header">
+
+					<span class="visible-xs navbar-brand">Menú</span>
+				</div>
+				<button class="btn btn-collapse" id="menu-toggle">
+					<span class="glyphicon glyphicon-sound-stereo" aria-hidden="true"></span>
+				</button>
+				<div class="navbar-collapse collapse sidebar-navbar-collapse">
+					<ul id="menus" class="nav navbar-nav">
+						<br>
+						<li id="mProv">
+							<a href="#" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-user pull-left" aria-hidden="true"></span>
+							<div class="menu-texto">
+								PROOVEDORES
+							</div></a>
+						</li>
+						<li id="mAdm">
+							<a href="#" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-cog pull-left" aria-hidden="true"></span>
+							<div class="menu-texto">
+								ADMINISTRACIÓN
+							</div></a>
+							<ul class="nav nav-pills">
+								<li id="mEst" class="togAdm">
+									<a href="#">Estructura</a>
+
+									<ul id="menuEst" class="nav nav-pills toggleMenu">
+										<li>
+											<a href="sucursales.html">Sucursales</a>
+										</li>
+										<li>
+											<a href="centrosProd.html">Centros de producción</a>
+										</li>
+										<li>
+											<a href="sitios.html">Sitios</a>
+										</li>
+										<li>
+											<a href="naves.html">Naves</a>
+										</li>
+										<li>
+											<a href="areas.html">Áreas</a>
+										</li>
+									</ul>
+								</li>
+								<li id="mUsr" class="togAdm">
+									<a href="#">Usuarios</a>
+
+									<ul id="menuUsr" class="nav nav-pills toggleMenu">
+										<li>
+											<a href="perfiles.html">Perfiles</a>
+										</li>
+										<li>
+											<a href="usuarios.html">Usuarios</a>
+										</li>
+									</ul>
+								</li>
+								<li id="mAjs" class="togAdm">
+									<a href="#">Ajustes</a>
+
+									<ul id="menuAjs" class="nav nav-pills toggleMenu">
+										<li>
+											<a href="empresa.html">Empresa</a>
+										</li>
+										<li>
+											<a href="licencia.html">Licencia</a>
+										</li>
+										<li>
+											<a href="panel.html">Panel</a>
+										</li>
+										<li>
+											<a href="historial.html">Historial</a>
+										</li>
+										<li>
+											<a href="dispositivos.html">Dispositivos</a>
+										</li>
+										<li>
+											<a href="modulos.html">Módulos</a>
+										</li>
+									</ul>
+								</li>
+								<li id="mSadm" class="togAdm">
+									<a href="#">Superadministración</a>
+
+									<ul id="menuSadm" class="nav nav-pills toggleMenu">
+										<li>
+											<a href="sa-dispositivos.html">Dispositivos</a>
+										</li>
+										<li>
+											<a href="sa-modulos.html">Módulos</a>
+										</li>
+										<li>
+											<a href="sa-licencias.html">Licencias</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li id="mInv">
+							<a class="" href="#" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-list-alt pull-left" aria-hidden="true"></span>
+							<div class="menu-texto">
+								INVENTARIO
+							</div></a>
+							<ul class="nav nav-pills">
+								<li id="mMov" class="togInv">
+									<a href="#">Movimientos</a>
+									<ul id="menuMov" class="nav nav-pills toggleMenu">
+										<li>
+											<a href="entradas.html">Entradas</a>
+										</li>
+										<li>
+											<a href="#">Salidas</a>
+										</li>
+										<li>
+											<a href="#">Inventarios</a>
+										</li>
+									</ul>
+
+								</li>
+								<li id="mCat" class="togInv">
+									<a href="#">Catálogos</a>
+
+									<ul id="menuCat" class="nav nav-pills toggleMenu">
+										<li>
+											<a href="#">Productos</a>
+										</li>
+										<li>
+											<a href="#">Líneas de producto</a>
+										</li>
+										<li>
+											<a href="#">Grupos de líneas</a>
+										</li>
+										<li>
+											<a href="#">Almacenes</a>
+										</li>
+										<li>
+											<a href="#">Conceptos</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li id="mProd">
+							<a href="#" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-briefcase pull-left" aria-hidden="true"></span>
+							<div class="menu-texto">
+								PRODUCCIÓN
+							</div></a>
+						</li>
+						<li id="mMC">
+							<a href="mc-principal.html" role="button" aria-haspopup="true" aria-expanded="false"> <span class="glyphicon glyphicon-time pull-left" aria-hidden="true"></span>
+							<div class="menu-texto">
+								MONITOREO Y CONTROL
+							</div></a>
+
+							<ul class="nav nav-pills">
+
+								<li id="mTV" class="togMC">
+
+									
+									
+									
+									<div>
+										<br>
+										<button id="opcUbic" style=" background: none; font-weight: 700 " class="btn btn-md">
+											<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Opciones de ubicación
+										</button>
+										<br>
+										<br>
+
+										<div id="ubic" style="display: none;">
+
+											<form>
+												<input type="checkbox" name="vehicle" value="Pais">
+
+												<select>
+													<option value="MX">México</option>
+												</select>
+												<br>
+												<br>
+
+												<input type="checkbox" name="vehicle" value="Estado" checked>
+
+												<select>
+													<option value="MX">Yucatán</option>
+												</select>
+												<br>
+												<br>
+												<input type="checkbox" name="vehicle" value="Ciudad" checked>
+
+												<select>
+													<option value="MX">Mérida</option>
+												</select>
+												<br>
+												<br>
+
+											</form>
+										</div>
+									</div>
+
+									<ul style="margin-bottom: 20px" id="tree1" class="tree">
+
+										<li>
+
+											<a href="#">Sucursal 01
+											<p class="sucursal hidden">
+												SC01
+											</p></a>
+
+											<ul>
+
+												<li>
+
+													<a href="#">Centro 01
+													<p class="centroProd hidden">
+														CP01
+													</p></a>
+
+													<ul>
+
+														<li>
+															<a href="#">Sitio 01
+															<p class="sitio hidden">
+																ST01
+															</p></a>
+															<ul>
+																<li>
+																	<a href="#">Nave 01
+																	<p class="nave hidden">
+																		NV01
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<a href="#">Nave 02
+																	<p class="nave hidden">
+																		NV02
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+
+														<li>
+															<a href="#">Sitio 02
+															<p class="sitio hidden">
+																ST02
+															</p></a>
+															<ul>
+																<li>
+																	<a href="#">Nave 01
+																	<p class="nave hidden">
+																		NV01
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<a href="#">Nave 02
+																	<p class="nave hidden">
+																		NV02
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+
+													</ul>
+
+												</li>
+
+												<li>
+													<a href="#">Centro 02
+													<p class="centroProd hidden">
+														CP02
+													</p></a>
+													<ul>
+														<li>
+															<a href="#">Sitio 01
+															<p class="sitio hidden">
+																ST01
+															</p></a>
+															<ul>
+																<li>
+																	<a href="#">Nave 01
+																	<p class="nave hidden">
+																		NV01
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<a href="#">Nave 02
+																	<p class="nave hidden">
+																		NV02
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<a href="#">Sitio 02
+															<p class="sitio hidden">
+																ST02
+															</p></a>
+															<ul>
+																<li>
+																	<a href="#">Nave 01
+																	<p class="nave hidden">
+																		NV01
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<a href="#">Nave 02
+																	<p class="nave hidden">
+																		NV02
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										<li>
+											<a href="#">Sucursal 02
+											<p class="sucursal hidden">
+												SC02
+											</p></a>
+											<ul>
+												<li>
+													<a href="#">Centro 01
+													<p class="centroProd hidden">
+														CP01
+													</p></a>
+													<ul>
+														<li>
+															<a href="#">Sitio 01
+															<p class="sitio hidden">
+																ST01
+															</p></a>
+															<ul>
+																<li>
+																	<a href="#">Nave 01
+																	<p class="nave hidden">
+																		NV01
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<a href="#">Nave 02
+																	<p class="nave hidden">
+																		NV02
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<a href="#">Sitio 02
+															<p class="sitio hidden">
+																ST02
+															</p></a>
+															<ul>
+																<li>
+																	<a href="#">Nave 01
+																	<p class="nave hidden">
+																		NV01
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<a href="#">Nave 02
+																	<p class="nave hidden">
+																		NV02
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+												<li>
+													<a href="#">Centro 02
+													<p class="centroProd hidden">
+														CP02
+													</p></a>
+													<ul>
+														<li>
+															<a href="#">Sitio 01
+															<p class="sitio hidden">
+																ST01
+															</p></a>
+															<ul>
+																<li>
+																	<a href="#">Nave 01
+																	<p class="nave hidden">
+																		NV01
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<a href="#">Nave 02
+																	<p class="nave hidden">
+																		NV02
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+														<li>
+															<a href="#">Sitio 02
+															<p class="sitio hidden">
+																ST02
+															</p></a>
+															<ul>
+																<li>
+																	<a href="#">Nave 01
+																	<p class="nave hidden">
+																		NV01
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+																<li>
+																	<a href="#">Nave 02
+																	<p class="nave hidden">
+																		NV02
+																	</p></a>
+																	<ul>
+																		<li>
+																			<a href="#">Área 01
+																			<p class="area hidden">
+																				AR01
+																			</p></a>
+																		</li>
+																		<li>
+																			<a href="#">Área 02
+																			<p class="area hidden">
+																				AR02
+																			</p></a>
+																		</li>
+																	</ul>
+																</li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+
+									</ul>
+
+								</li>
+
+							</ul>
+
+						</li>
+
+					</ul>
+					<br>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/menu-nav.js"></script>
+<script src="js/tree.js"></script>

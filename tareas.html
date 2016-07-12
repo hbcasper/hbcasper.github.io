@@ -1,0 +1,292 @@
+<div class="row">
+	<ul class="breadcrumb bcheader">
+		<li>
+			Monitoreo y Control
+		</li>
+		<li>
+			Control
+		</li>
+		<li class="active">
+			Tareas
+		</li>
+	</ul>
+	<div class="col-md-8">
+		<h1>Tareas</h1>
+	</div>
+	<div class="col-md-4">
+		<button type="button" class="btn btn-nuevo pull-right" data-toggle="modal" data-target="#modalNuevaTarea">
+			<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Nueva Tarea
+		</button>
+	</div>
+</div>
+<table id="table" class="table table-no-bordered" data-pagination="true" data-search="true" data-toolbar=".toolbar">
+	<!--data-toggle="table"-->
+	<thead>
+		<tr>
+			<th data-field="descripcion" data-sortable="true">Descripción</th>
+			<th data-field="asignado" data-sortable="true">Asignado a</th>
+			<th data-field="fecha" data-sortable="true">Fecha</th>
+			<th data-field="area" data-sortable="true">Área</th>
+			<th data-field="editar" data-formatter="editarFormatter" data-events="editarEventsTareas"></th>
+			<th data-field="masInfo" data-formatter="masInfoFormatter" data-events="masInfoEventsTareas"></th>
+			<th data-field="eliminar" data-formatter="elimFormatter" data-events="elimEventsTareas"></th>
+		</tr>
+	</thead>
+</table>
+
+<div id="modalNuevaTarea" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content central-panel">
+			<div class="modal-header">
+				<ul class="breadcrumb col-md-11">
+					<li>
+						Monitoreo y Control
+					</li>
+					<li>
+						Control
+					</li>
+					<li>
+						Tareas
+					</li>
+					<li class="active modalBc">
+						Nueva Tarea
+					</li>
+				</ul>
+
+				<button type="button" class="close col-md-1" data-dismiss="modal">
+					<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<h1 class="modal-title modalTitle">Nueva Tarea</h1>
+				<hr>
+				<form class="nuevaTarea">
+
+					<label class="control-label" for="instruccion">Instrucción</label>
+					<input type="text" class="form-control inputForm" id="instruccion" placeholder="Ingrese la instrucción" required/>
+
+					<label class="control-label" for="asignado">Asignar a</label>
+					<input type="text" class="form-control inputForm" id="asignado" placeholder="Ingrese la persona asignada" required/>
+
+					<h3>Lugar</h3>
+					<hr>
+					<select class="form-control inputForm" id="sucursal" required>
+						<option disabled selected hidden value="">Sucursal</option>
+						<option>SC01</option>
+						<option>SC02</option>
+					</select>
+
+					<select class="form-control inputForm" id="granja" required>
+						<option disabled selected hidden value="">Granja</option>
+						<option>GR01</option>
+						<option>GR02</option>
+					</select>
+
+					<select class="form-control inputForm" id="area" required>
+						<option disabled selected hidden value="">Área</option>
+						<option>AR01</option>
+						<option>AR02</option>
+					</select>
+
+					<h3>Horario</h3>
+					<hr>
+					<label class="control-label" >Hora de Inicio</label>
+
+					<input type="time" class="form-control inputForm clockpicker" id="horaInicio" placeholder="00:00" required/>
+					<label class="control-label" >Hora de Finalizacion</label>
+					<input type="time" class="form-control inputForm clockpicker" id="horaFin" placeholder="00:00" required/>
+					<label class="control-label" for="inicioVigencia">Fecha</label>
+					<input type="date" class="form-control inputForm" id="inicioVigencia" placeholder="DD-MM-AAAA" required/>
+
+					<div class="form-group">
+						<label class="control-label "> Repeticion </label>
+						<div class="">
+							<div class="radio">
+								<label class="radio">
+									<input name="repeticion" type="radio" value="No"/>
+									Diario </label>
+							</div>
+							<div class="radio">
+								<label class="radio">
+									<input name="repeticion" type="radio" value="Si"/>
+									Semanal </label>
+							</div>
+							<div class="radio">
+								<label class="radio">
+									<input name="repeticion" type="radio" value="No"/>
+									Mensual</label>
+							</div>
+							<div class="radio">
+								<label class="radio">
+									<input name="repeticion" type="radio" value="No"/>
+									Anual</label>
+							</div>
+							<div class="radio">
+								<label class="radio">
+									<input name="repeticion" type="radio" value="No"/>
+									No repetir</label>
+							</div>
+						</div>
+					</div>
+
+					<div class="form-group hidden" id="si">
+
+						<h4>Días</h4><label class="checkbox-inline active">
+							<input type="checkbox" id="lunes" value="lunes">
+							Lunes </label><label class="checkbox-inline">
+							<input type="checkbox" id="martes" value="martes">
+							Martes </label><label class="checkbox-inline">
+							<input type="checkbox" id="miercoles" value="miercoles">
+							Miércoles </label><label class="checkbox-inline">
+							<input type="checkbox" id="jueves" value="jueves">
+							Jueves </label><label class="checkbox-inline">
+							<input type="checkbox" id="viernes" value="viernes">
+							Viernes </label><label class="checkbox-inline">
+							<input type="checkbox" id="sabado" value="sabado">
+							Sábado </label><label class="checkbox-inline">
+							<input type="checkbox" id="domingo" value="domingo">
+							Domingo </label>
+					</div>
+					<div class="form-group hidden" id="no">
+
+					</div>
+
+					<div class="form-group">
+						<label class="control-label "> Finaliza </label>
+						<div class="">
+							<div class="radio">
+								<label class="radio">
+									<input name="repeticion" type="radio" value="Si"/>
+									Nunca </label>
+							</div>
+							<div class="radio">
+								<label class="radio">
+									<input name="repeticion" type="radio" value="No"/>
+									Despues de
+									<select class="form-control inputForm" id="area" required>
+										<option disabled selected hidden value="">0</option>
+										<option>1</option>
+										<option>2</option>
+									</select>repeticiones</label>
+							</div>
+							<div class="radio">
+								<label class="radio">
+									<input name="repeticion" type="radio" value="Si"/>
+									<input type="date" class="form-control inputForm" id="inicioVigencia" placeholder="DD-MM-AAAA" required/>
+								</label>
+							</div>
+
+						</div>
+					</div>
+
+
+				<button type="button" class="btn btn-cancelar" data-dismiss="modal">
+					Cancelar
+				</button>
+				<button class="btn btn-guardar">
+					Guardar
+				</button>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modalInfoTarea" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<ul class="breadcrumb col-md-11">
+					<li>
+						Monitoreo y Control
+					</li>
+					<li>
+						Control
+					</li>
+					<li>
+						Tareas
+					</li>
+					<li class="active">
+						Tarea
+					</li>
+				</ul>
+				<button type="button" class="close col-md-1" data-dismiss="modal">
+					<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-10">
+						<h1 class="modal-title">Detalles de Tarea</h1>
+					</div>
+					<div class="col-md-2">
+						<button type="button" class="btn btn-editar editarInfo">
+							<span class="glyphicon glyphicon-pencil icon-pencil" aria-hidden="true"></span> Editar
+						</button>
+					</div>
+				</div>
+				<hr>
+				<label class="control-label">Instrucción</label>
+				<p id="instruccionInfo">
+					instruccion
+				</p>
+
+				<label class="control-label" >Asignado a</label>
+				<p id="asignadoInfo">
+					asignado
+				</p>
+
+				<h3>Lugar</h3>
+				<hr>
+				<label class="control-label" >Sucursal</label>
+				<p id="sucursalInfo">
+					sucursal
+				</p>
+
+				<label class="control-label" >Granja</label>
+				<p id="granjaInfo">
+					granja
+				</p>
+
+				<label class="control-label" > Área</label>
+				<p id="areaInfo">
+					area
+				</p>
+
+				<h3>Horario</h3>
+				<hr>
+
+				<h4>Días</h4>
+				<label class="checkbox-inline active">
+					<input type="checkbox" id="lunesInfo" disabled value="lunes">
+					Lunes </label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="martesInfo" disabled value="martes">
+					Martes </label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="miercolesInfo" disabled value="miercoles">
+					Miércoles </label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="juevesInfo" disabled value="jueves">
+					Jueves </label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="viernesInfo" disabled value="viernes">
+					Viernes </label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="sabadoInfo" disabled value="sabado">
+					Sábado </label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="domingoInfo" disabled value="domingo">
+					Domingo </label>
+
+				<h4>Hora</h4>
+				<p id="horaInfo">
+					hora
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/data/tareasData.js"></script>
+<script src="js/tareas.js"></script>

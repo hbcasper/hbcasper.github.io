@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>GRANHAS - Sitios</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+	
+</head>
+
+<body>
+	<header></header><br>
+	
+<div class="container-fluid">
+  <div class="row">
+    <!--menu-->
+	<div class="col-md-12">
+					<div id="menu-nav"></div>
+					<div id="chat"></div>
+					<div id="main-content" class="panel panel-default ">
+        <div class="panel-body central-panel">
+         	<div class="row">
+         	  <ul class="breadcrumb bcheader">
+	              <li><a href="#">Administración</a></li>
+	              <li><a href="#">Estructura</a></li>
+	              <li class="active"><a href="#">Sitios</a></li>
+	          </ul>
+	          <div class="col-md-8">
+	            <h1>Sitios</h1>
+	          </div>
+	          <div class="col-md-4">
+	            <button type="button" class="btn btn-nuevo pull-right" data-toggle="modal" data-target="#modalNuevoSitio">
+	            	<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Nuevo Sitio</button>
+	          </div>
+          	</div>
+          <table id="table" class="table table-no-bordered" data-pagination="true" data-search="true" data-toolbar=".toolbar"> <!--data-toggle="table"--> 
+            <thead>
+              <tr>
+              	<th data-field="nombre" data-sortable="true">Nombre</th>
+                <th data-field="empresa" data-sortable="true">Empresa</th>
+                <th data-field="direccion" data-sortable="true">Dirección</th>
+                <th data-field="fecha" data-sortable="true">Fecha de Registro</th>
+                <th data-field="editar" data-formatter="editarFormatter" data-events="editarEvents"></th>
+                <th data-field="masInfo" data-formatter="masInfoFormatter" data-events="masInfoEvents"></th>
+                <th data-field="eliminar" data-formatter="elimFormatter" data-events="elimEvents"></th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="modalNuevoSitio" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content central-panel">
+          <div class="modal-header"> 
+            <ul class="breadcrumb col-md-11">
+              <li>Administración</li>
+              <li>Estructura</li>
+              <li>Sitios</li>
+              <li class="active modalBc">Nuevo Sitio</li>
+            </ul>
+            <button type="button" class="close col-md-1" data-dismiss="modal">
+            	<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+          </div>
+          <div class="modal-body">
+            	<h1 class="modal-title modalTitle">Nuevo Sitio</h1>
+            	<hr>
+            <form class="nuevoSitio">
+            	<div class="row">
+            		<div class="form-group col-md-8">
+            			<div class="row">
+            				<div class="form-group col-md-12">
+            					<label class="control-label" for="nombre">Nombre</label>
+            					<input type="text" class="form-control inputForm" id="nombre" maxlength="20" placeholder="Ingrese el nombre del centro" required/>
+            				<br>
+            					<label class="control-label" for="centroProd">Centro de Producción</label>
+            					<select class="form-control inputForm" id="centroProd" required>
+		                      		<option disabled selected hidden value="">Seleccionar</option>
+		                      		<option>CP01</option>
+		                      		<option>CP02</option>
+                 				</select>
+            				</div>
+            			</div>
+            		</div>
+            		<div class="form-group col-md-4">
+            			<div class="row">
+            				<div class="col-md-12">
+            					<!--mapa-->
+            					<div id="map-canvas" class="map-canvas"></div>
+            				</div>
+            				<div class="col-md-3 col-md-offset-7">
+            					<br>
+            					<button type="button" class="btn btn-cancelar" data-dismiss="modal">Cancelar</button>
+            					<button class="btn btn-guardar">Guardar</button>
+            				</div>
+            			</div>
+            		</div>
+            	</div> 
+            </form>         
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modalInfoSitio" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <ul class="breadcrumb col-md-11">
+              <li>Administración</li>
+              <li>Estructura</li>
+              <li>Sitios</li>
+              <li class="active">Sitio</li>
+            </ul>
+            <button type="button" class="close col-md-1" data-dismiss="modal">
+            	<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+          </div>
+          <div class="modal-body">
+          	<div class="row">
+	          	<div class="col-md-10">
+	            	<h1 class="modal-title">Detalles de Sitio</h1>
+	            </div>
+	            <div class="col-md-2">
+	            	<button type="button" class="btn btn-editar editarInfo">
+	        		<span class="glyphicon glyphicon-pencil icon-pencil" aria-hidden="true"></span> Editar</button>
+	        	</div>
+        	</div>
+        	<hr>
+        	<div class="row">
+        		<div class="form-group col-md-8">
+        			<div class="row">
+        				<div class="form-group col-md-12">
+		        			<label class="control-label">Nombre</label>
+		        			<p id="nombreInfo">nombre</p>
+		        			<br>
+		        			<label class="control-label">Centro de Producción</label>
+		        			<p id="centroProdInfo">centro de producción</p>
+		        		</div>
+        			</div>
+        		</div>
+        		<div class="form-group col-md-4">
+        			<div class="row">
+        				<div class="col-md-12">
+        					<!--mapa-->
+        					<div id="map-canvasInfo" class="map-canvas"></div>
+        				</div>
+        			</div>
+            	</div>
+        	</div>  
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<div id="avisos" class="panel panel-default col-md-8 col-md-offset-2 footer navbar-fixed-bottom" ></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-es-MX.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?&extension=.js&output=embed"></script>
+<script src="js/data/sitiosData.js"></script>
+<script src="js/main.js"></script>
+<script src="js/mapa.js"></script>
+<script src="js/sitios.js"></script>
+</body>
+

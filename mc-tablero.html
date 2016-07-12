@@ -1,0 +1,83 @@
+<div class="row">
+	<ul class="breadcrumb bcheader">
+		<li>
+			Monitoreo y Control
+		</li>
+		<li>
+			Monitoreo
+		</li>
+		<li class="active">
+			Tablero
+		</li>
+	</ul>
+	<div class="col-md-9">
+		<h1>Tablero de Control
+		<button type="button" class="btn btn-ayuda"  data-toggle="popover" data-trigger="focus"
+		data-content=" <button type='button' class='btn btn-success'></button> Bien <button type='button' class='btn btn-warning'></button> Precaución <button type='button' class='btn btn-danger'></button> Riesgo">
+			<span class="glyphicon glyphicon-question-sign icon-question" aria-hidden="true"></span>
+		</button></h1>
+	</div>
+	<div class="col-md-3">
+
+	</div>
+</div>
+<hr>
+
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-default tablero">
+
+			<div class="panel-body">
+
+				<h3 class="grafica-header grafica-danger">Temperatura
+				<button type="button" class="btn btn-masInfo">
+					<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Más Información
+				</button></h3>
+				<canvas id="grafica1" class="grafica"></canvas>
+				<p>
+					Sensor: Sensor SR01 PIN01
+				</p>
+				<p>
+					Sucursal Mérida - CP01 - ST01 - NV01 - AR01
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="panel panel-default tablero">
+			<div class="panel-body">
+				<h3 class="grafica-header grafica-warning">Temperatura
+				<button type="button" class="btn btn-masInfo">
+					<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Más Información
+				</button></h3>
+				<canvas id="grafica2" class="grafica"></canvas>
+				<p>
+					Sensor: Sensor SR02 PIN01
+				</p>
+				<p>
+					Sucursal Mérida - CP02 - ST02 - NV02 - AR02
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<div class="panel panel-default tablero">
+			<div class="panel-body">
+				<h3 class="grafica-header grafica-success">Temperatura
+				<button type="button" class="btn btn-masInfo">
+					<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Más Información
+				</button></h3>
+				<canvas id="grafica3" class="grafica"></canvas>
+				<p>
+					Sensor: Sensor SR01 PIN01
+				</p>
+				<p>
+					Sucursal Mérida - CP01 - ST01 - NV01 - AR01
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/mc-tablero.js"></script>

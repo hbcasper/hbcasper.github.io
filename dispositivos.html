@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>GRANHAS - Dispositivos</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/main.css">
+
+	</head>
+
+	<body>
+		<header></header>
+		<br>
+
+		<div class="container-fluid">
+			<div class="row">
+				<!--menu-->
+				<div class="col-md-12">
+					<div id="menu-nav"></div>
+					<div id="chat"></div>
+					<div id="main-content" class="panel panel-default ">
+						<div class="panel-body central-panel">
+							<div class="row">
+								<ul class="breadcrumb bcheader">
+									<li>
+										<a href="#">Administración</a>
+									</li>
+									<li>
+										<a href="#">Ajustes</a>
+									</li>
+									<li class="active">
+										<a href="#">Dispositivos</a>
+									</li>
+								</ul>
+								<div class="col-md-10">
+									<h1>Dispositivos</h1>
+								</div>
+							</div>
+							<table id="table" class="table table-no-bordered" data-pagination="true" data-search="true" data-toolbar=".toolbar">
+								<!--data-toggle="table"-->
+								<thead>
+									<tr>
+										<th data-field="clave" data-sortable="true">Clave</th>
+										<th data-field="nombre" data-sortable="true">Nombre</th>
+										<th data-field="modelo" data-sortable="true">Modelo</th>
+										<th data-field="fecha" data-sortable="true">Fecha de Registro</th>
+										<th data-field="editar" data-formatter="editarFormatter" data-events="editarEvents"></th>
+										<th data-field="masInfo" data-formatter="masInfoFormatter" data-events="masInfoEvents"></th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div id="modalNuevoDispositivo" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content central-panel">
+							<div class="modal-header">
+								<ul class="breadcrumb col-md-11">
+									<li>
+										Administración
+									</li>
+									<li>
+										Ajustes
+									</li>
+									<li>
+										Dispositivos
+									</li>
+									<li class="active modalBc">
+										Nuevo Dispositivo
+									</li>
+								</ul>
+								<button type="button" class="close col-md-1" data-dismiss="modal">
+									<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<h1 class="modal-title modalTitle">Nuevo Módulo</h1>
+								<hr>
+								<form class="nuevoDispositivo">
+
+									<label class="control-label">Clave</label>
+									<p id="clave">
+										clave
+									</p>
+
+									<label class="control-label" for="nombre">Nombre</label>
+									<input type="text" class="form-control inputForm" id="nombre" placeholder="Ingrese el nombre de la empresa" required/>
+
+									<label class="control-label">Modelo</label>
+									<p id="modelo">
+										modelo
+									</p>
+
+									<label class="control-label">Descripción</label>
+									<p id="descripcion">
+										descripcion
+									</p>
+
+									<div id="map-canvas" class="map-canvas"></div>
+
+									<label class="control-label">Sucursal</label>
+									<p id="sucursal">
+										sucursal
+									</p>
+
+									<label class="control-label">Centro de producción</label>
+									<p id="centroProd">
+										centro prod
+									</p>
+
+									<label class="control-label">Sitio</label>
+									<p id="sitio">
+										sitio
+									</p>
+
+									<label class="control-label">Nave</label>
+									<p id="nave">
+										nave
+									</p>
+
+									<label class="control-label">Área</label>
+									<p id="area">
+										area
+									</p>
+
+									<button type="button" class="btn btn-cancelar" data-dismiss="modal">
+										Cancelar
+									</button>
+									<button class="btn btn-guardar">
+										Guardar
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="modalInfoDispositivo" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<ul class="breadcrumb col-md-11">
+									<li>
+										Administración
+									</li>
+									<li>
+										Ajustes
+									</li>
+									<li>
+										Dispositivos
+									</li>
+									<li class="active">
+										Dispositivo
+									</li>
+								</ul>
+								<button type="button" class="close col-md-1" data-dismiss="modal">
+									<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-md-10">
+										<h1 class="modal-title">Detalles de Dispositivo</h1>
+									</div>
+									<div class="col-md-2">
+										<button type="button" class="btn btn-editar editarInfo">
+											<span class="glyphicon glyphicon-pencil icon-pencil" aria-hidden="true"></span> Editar
+										</button>
+									</div>
+								</div>
+								<hr>
+
+								<label class="control-label">Clave</label>
+								<p id="claveInfo">
+									clave
+								</p>
+
+								<label class="control-label">Nombre</label>
+								<p id="nombreInfo">
+									nombre
+								</p>
+
+								<label class="control-label">Modelo</label>
+								<p id="modeloInfo">
+									modelo
+								</p>
+
+								<label class="control-label">Descripción</label>
+								<p id="descripcionInfo">
+									descripcion
+								</p>
+
+								<div id="map-canvasInfo" class="map-canvas"></div>
+
+								<label class="control-label">Sucursal</label>
+								<p id="sucursalInfo">
+									sucursal
+								</p>
+
+								<label class="control-label">Centro de producción</label>
+								<p id="centroProdInfo">
+									centro prod
+								</p>
+
+								<label class="control-label">Sitio</label>
+								<p id="sitioInfo">
+									sitio
+								</p>
+
+								<label class="control-label">Nave</label>
+								<p id="naveInfo">
+									nave
+								</p>
+
+								<label class="control-label">Área</label>
+								<p id="areaInfo">
+									area
+								</p>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="avisos" class="panel panel-default col-md-8 col-md-offset-2 footer navbar-fixed-bottom" ></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-es-MX.min.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?&extension=.js&output=embed"></script>
+		<script src="js/data/dispositivosData.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/mapa.js"></script>
+		<script src="js/dispositivos.js"></script>
+	</body>
+

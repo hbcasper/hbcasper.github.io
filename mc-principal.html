@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>GRANHAS - Monitoreo y Control</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.0.0/css/bootstrap-slider.min.css"/>
+		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/bootstrap-clockpicker.min.css"/>
+	</head>
+
+	<body>
+		<header></header>
+		<div class="container-fluid">
+			<div class="row">
+
+				<div class="col-md-12">
+					<div id="menu-nav"></div>
+					<div id="chat"></div>
+					<div id="main-content" class="row">
+						
+						<div class="col-md-12">
+							<div class="panel panel-default">
+								<div class="panel-body central-panel">
+
+									<nav class="menu-mc navbar navbar-default ">
+										<div class="container-fluid">
+
+											<div class="collapse navbar-collapse">
+												<ul class="nav navbar-nav ">
+
+													<li class="dropdown">
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Monitoreo <span class="caret"></span></a>
+														<ul class="dropdown-menu">
+															<li>
+																<a class="variables" href="#">Variables</a>
+															</li>
+															<li>
+																<a class="sensores" href="#">Sensores</a>
+															</li>
+															<li>
+																<a class="mc-tablero" href="#">Tablero</a>
+															</li>
+														</ul>
+													</li>
+													<li class="dropdown">
+														<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Control <span class="caret"></span></a>
+														<ul class="dropdown-menu">
+															<li>
+																<a class="tareas" href="#">Tareas</a>
+															</li>
+															<li>
+																<a class="eventos" href="#">Eventos</a>
+															</li>
+															<li>
+																<a class="calendario" href="#">Calendario</a>
+															</li>
+
+														</ul>
+													</li>
+
+													<li>
+														<a class="mc-dispositivos" href="#">Dispositivos</a>
+													</li>
+												</ul>
+
+											</div><!-- /.navbar-collapse -->
+										</div><!-- /.container-fluid -->
+									</nav>
+
+									<div class="col-md-12 mc-content">
+										<h1>Monitoreo y Control</h1>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="avisos" class="panel panel-default col-md-8 col-md-offset-2 footer navbar-fixed-bottom" ></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-es-MX.min.js"></script>
+		<script src="http://maps.googleapis.com/maps/api/js?&extension=.js&output=embed"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.1/Chart.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/fullcalendar.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.6.1/lang/es.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/clockpicker/0.0.7/bootstrap-clockpicker.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/7.0.0/bootstrap-slider.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/mc-principal.js"></script>
+		<script src="js/mapa.js"></script>
+		
+	</body>
+

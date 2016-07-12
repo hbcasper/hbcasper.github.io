@@ -1,0 +1,153 @@
+<div id="chat-wrapper" class="panel panel-default">
+
+	<button class="btn btn-collapse pull-right" id="chat-toggle">
+		<span class="glyphicon glyphicon-sound-stereo" aria-hidden="true"></span>
+	</button>
+	<div class="panel panel-default chat">
+		<div class="panel-heading chat-botones">
+			<ul id="chat-tabs" class="nav nav-pills nav-justified chat-collapse">
+				<li id="navChat">
+					<a onclick="changenotif()"  href="#tabChat" data-toggle="tab">Chat</a>
+					<a id="chat-notifications"  class="btn btn-default btn-circle circle-chat-tab">2</a>
+				</li>
+				<li id="navContactos" class="active">
+					<a href="#tabContactos" data-toggle="tab">Contactos</a>
+
+				</li>
+			</ul>
+		</div>
+		<div id="body-contacts" class="panel-body">
+			<div class="tab-content">
+				<div class="tab-pane fade" id="tabChat">
+					<!-- INT tab 1 -->
+
+					<div class="pull-right">
+
+						<div class="msg-wrap ">
+
+							<div class="messages">
+								<div id="chat-cont">
+
+									<div class="media msg">
+
+										<a class="pull-left" href="#"> <img class="media-object img-circle img-responsive img-contacto-chat" alt="Img" width="30px" height="30px" src="http://www.mastermagazine.info/termino/wp-content/uploads/Usuario-Icono.jpg"> </a>
+										<div class="media-body">
+											<h5 class="media-heading nombre-chat">Pedro Pablo</h5>
+											<p>
+												<small class="pull-right time">12:10 am</small>Este es un mensaje
+											</p>
+										</div>
+										<p>
+											<small class="pull-right time">12:12 am</small>Otro mensaje más largo que los demás
+										</p>
+										<p>
+											<small class="pull-right time">12:13 am</small>Último mensaje
+										</p>
+									</div>
+									<hr>
+									<div class="media msg">
+
+										<a class="pull-left" href="#"> <img class="media-object img-circle img-responsive" alt="Img" width="30px" height="30px" src="http://audubondermatology.com/wp-content/uploads/2012/09/skin-care-for-men-good-looking-guy.jpg"> </a>
+										<div class="media-body">
+											<h5 class="media-heading">Yo</h5>
+											<p>
+												<small class="pull-right time">12:14 am</small>Este es un mensaje
+											</p>
+										</div>
+									</div>
+									<p>
+										<small class="pull-right time">12:16 am</small>Otro mensaje
+									</p>
+
+									<div class="fin-messages"></div>
+								</div>
+
+							</div>
+
+							<div class="input-group mensaje">
+
+								<input type="text" class="form-control send-message" placeholder="Tu mensaje" />
+								<span class="input-group-btn">
+									<button class="btn btn-mensaje" type="button">
+										<span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+									</button> </span>
+
+							</div>
+							<HR>
+							<button onclick="clearBox('chat-cont')" class="btn btn-archive" type="button">
+								<span class="glyphicon glyphicon-folder-open" aria-hidden="true"> </span> Archivar
+							</button>
+							</span>
+							<button onclick="clearBox('chat-cont')" class="btn btn-erase" type="button">
+								<span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Eliminar
+							</button>
+
+						</div>
+					</div>
+				</div>
+				<!--tab 2-->
+				<div class="tab-pane fade in active" id="tabContactos">
+					<button class="btn btn-contacto" href="#tabChat" data-toggle="tab">
+						<div class="media contacto">
+							<div class="pull-left">
+								<img class="media-object img-circle img-responsive img-contacto" alt="Img" width="30px" height="30px" src="https://cdn2.iconfinder.com/data/icons/devine-icons-part-2/128/User_Group.png">
+
+								<a id="chat-notifications"  class="btn btn-default btn-circle circle-chat">3</a>
+
+							</div>
+							<div class="media-body chat-collapse">
+								<h5 class="nombre-contacto media-heading">Produccion</h5>
+
+								<small class="mensajes">3 nuevos mensajes</small>
+							</div>
+						</div>
+					</button>
+					<button class="btn btn-contacto" href="#tabChat" data-toggle="tab">
+						<div class="media contacto">
+							<div class="pull-left">
+								<img class="media-object img-circle img-responsive img-contacto" alt="Img" width="30px" height="30px" src="http://www.mastermagazine.info/termino/wp-content/uploads/Usuario-Icono.jpg">
+
+								<a id="chat-notifications"  class="btn btn-default btn-circle circle-chat">3</a>
+
+							</div>
+							<div class="media-body chat-collapse">
+								<h5 class="nombre-contacto media-heading">Pedro Pablo</h5>
+
+								<small class="mensajes">3 nuevos mensajes</small>
+							</div>
+						</div>
+					</button>
+					<button class="btn btn-contacto" href="#tabChat" data-toggle="tab">
+						<div class="media contacto">
+							<div class="pull-left">
+								<img class="media-object img-circle img-responsive img-contacto" alt="Img" width="30px" height="30px" src="http://cdns2.freepik.com/fotos-gratis/mulher-usuario-clip-art-icon_421787.jpg">
+								<a id="chat-notifications"  class="btn btn-default btn-circle circle-chat">5</a>
+							</div>
+							<div class="media-body chat-collapse">
+								<h5 class="nombre-contacto media-heading">Andrea Dorantes</h5>
+								<small class="mensajes">5 nuevos mensajes</small>
+							</div>
+						</div>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/chat.js"></script>
+<script>
+	function changenotif() {
+		var change = document.getElementById("chat-notifications");
+
+		change.innerHTML = "0";
+
+		this.style.backgroundColor = 'green';
+
+	}
+
+	function clearBox(elementID) {
+		$("#chat-cont").empty();
+	}
+
+</script>

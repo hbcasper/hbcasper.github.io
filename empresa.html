@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>GRANHAS - Empresas</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+	
+</head>
+
+<body>
+	<header></header><br>
+	
+<div class="container-fluid">
+  <div class="row">
+    <!--menu-->
+	<div class="col-md-12">
+					<div id="menu-nav"></div>
+					<div id="chat"></div>
+					<div id="main-content" class="panel panel-default ">
+        <div class="panel-body central-panel">
+         	<div class="row">
+         	  <ul class="breadcrumb bcheader">
+	              <li><a href="#">Administración</a></li>
+	              <li><a href="#">Ajustes</a></li>
+	              <li class="active"><a href="#">Empresa</a></li>
+	          </ul>
+	          <div class="col-md-8">
+	            <h1>Detalles de Empresa</h1>
+	          </div>
+	          <div class="col-md-4">
+            	<button type="button" class="btn btn-editar editarInfo pull-right" data-toggle="modal" data-target="#modalEmpresa">
+        		<span class="glyphicon glyphicon-pencil icon-pencil" aria-hidden="true"></span> Editar</button>
+	          </div>
+          	</div>
+          	
+          	<hr>
+          	<label class="control-label">Nombre</label>
+          	<p id="nombreInfo">nombre</p>
+          
+          	<label class="control-label">Sector</label>
+          	<p id="sectorInfo">STR01</p>
+          
+          	<label class="control-label">Razón Social</label>
+          	<p id="razonInfo">razon</p>
+          
+          	<label class="control-label">RFC</label>
+          	<p id="rfcInfo">rfc</p>
+          
+          	<label class="control-label">País</label>
+          	<p id="paisInfo">pais</p>
+          
+          	<label class="control-label">Estado</label>
+          	<p id="estadoInfo">estado</p>
+          
+          	<label class="control-label">Ciudad</label>
+          	<p id="ciudadInfo">ciudad</p>
+          
+          	<label class="control-label">Localidad</label>
+          	<p id="localidadInfo">localidad</p>
+          
+          	<label class="control-label">Dirección</label>
+          	<p id="direccionInfo">direccion</p>
+          
+            <label class="control-label">Código Postal</label>
+          	<p id="CPInfo">CP</p>
+          
+          	<label class="control-label">Stio web</label>
+            <p id="webInfo">web</p>
+          
+          	<label class="control-label">Teléfono</label>
+          	<p id="telefonoInfo">telefono</p>
+          
+          	<label class="control-label">Logotipo</label>
+          	<img id="imagenInfo" src="http://dev.alurosu.com/bobo/chat/data/img/admin/default.png" 
+            		class="img-rounded img-responsive" alt="Logotipo" width="150px" height="150px">
+          
+          	<label class="control-label">Ubicación</label>
+          	<div id="map-canvas" class="map-canvas"></div>
+          
+          	<h3>Contacto</h3>
+          	<hr>
+          	<label class="control-label">Nombre</label>
+          	<p id="nombreCInfo">nombre</p>
+          
+          	<label class="control-label">Apellido Paterno</label>
+          	<p id="aPaternoCInfo">paterno</p>
+          
+          	<label class="control-label">Apellido Materno</label>
+          	<p id="aMaternoCInfo">materno</p>
+          
+          	<label class="control-label">Dirección</label>
+          	<p id="direccionCInfo">direccion</p>
+          
+          	<label class="control-label">Correo electrónico</label>
+          	<p id="correoCInfo">correo</p>
+          
+          	<label class="control-label">Teléfono</label>
+          	<p id="telefonoCInfo">tel</p>
+          
+          	<label class="control-label">Celular</label>
+          	<p id="celularCInfo">cel</p>
+          
+        </div>
+      </div>
+    </div>
+    <div id="modalEmpresa" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content central-panel">
+          <div class="modal-header"> 
+            <ul class="breadcrumb col-md-11">
+              <li>Administración</li>
+              <li>Ajustes</li>
+              <li>Empresa</li>
+              <li class="active modalBc">Editar Empresa</li>
+            </ul>
+            <button type="button" class="close col-md-1" data-dismiss="modal">
+            	<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+          </div>
+          <div class="modal-body">
+            	<h1 class="modal-title modalTitle">Detalles de Empresa</h1>
+            	<hr>
+            <form class="editEmpresa">
+            	
+            	<label class="control-label" for="nombre">Nombre</label>
+            	<input type="text" class="form-control inputForm" id="nombre" placeholder="Ingrese el nombre" required/>
+            	
+            	<select class="form-control inputForm" id="sector" required>
+	          		<option disabled selected hidden value="">Seleccionar sector</option>
+	          		<option>STR01</option>
+	          		<option>STR02</option>
+				</select>
+            				
+            	<label class="control-label" for="razon">Razón Social</label>
+            	<input type="text" class="form-control inputForm" id="razon" placeholder="Ingrese la razón social" required/>
+            	
+            	<label class="control-label" for="rfc">RFC</label>
+            	<input type="text" class="form-control inputForm" id="rfc" placeholder="Ingrese el RFC" required/>
+            	
+            	<div class="row">
+    				<div class="form-group col-md-3">
+    					<label class="control-label" for="pais">País</label>
+            			<select class="form-control inputForm" id="pais" required>
+                      		<option disabled selected hidden value="">Seleccionar</option>
+                      		<option>México</option>
+                      		<option>Venezuela</option>
+         				</select>
+         			</div>
+         			<div class="form-group col-md-3">
+         				<label class="control-label" for="estado">Estado</label>
+                    	<select class="form-control inputForm" id="estado" required>
+                      		<option disabled selected hidden value="">Seleccionar</option>
+                      		<option>Yucatán</option>
+                      		<option>Campeche</option>
+                    	</select>
+            		</div>
+            		<div class="form-group col-md-3">
+            			<label class="control-label" for="ciudad">Ciudad</label>
+            			<select class="form-control inputForm" id="ciudad" required>
+                      		<option disabled selected hidden value="">Seleccionar</option>
+                      		<option>Mérida</option>
+                      		<option>Progreso</option>
+                 		</select>
+                 	</div>
+                 	<div class="form-group col-md-3">
+                 		<label class="control-label" for="localidad">Localidad</label>
+                    	<select class="form-control inputForm" id="localidad" required>
+                      		<option disabled selected hidden value="">Seleccionar</option>
+                      		<option>L01</option>
+                      		<option>L02</option>
+                    	</select>
+    				</div>
+    			</div>
+    			
+    			<label class="control-label" for="direccion">Dirección</label>
+            	<input type="text" class="form-control inputForm" id="direccion" placeholder="Ingrese la dirección" required/>
+            	
+            	<label class="control-label" for="CP">Código Postal</label>
+            	<input type="number" class="form-control inputForm" id="CP" placeholder="Ingrese el código postal" required/>
+            	
+            	<label class="control-label" for="web">Sitio Web</label>
+            	<input type="url" class="form-control inputForm" id="web" placeholder="Ingrese el sitio web" required/>
+            	
+            	<label class="control-label" for="telefono">Teléfono</label>
+            	<input type="number" class="form-control inputForm" id="telefono" placeholder="Ingrese el teléfono" required/>
+            	
+            	<label class="control-label">Logotipo</label>
+	          	<img src="http://dev.alurosu.com/bobo/chat/data/img/admin/default.png" id="imagen" class="img-rounded img-responsive" alt="Imagen de usuario" width="140px" height="140px">
+            	<input type="file" id="imagenLogotipo" accept="image/x-png, image/gif, image/jpeg, image/jpg">
+	          
+	          	<label class="control-label">Ubicación</label>
+	          	<div id="map-canvasInfo" class="map-canvas"></div>
+            	
+            	<h3>Contacto</h3>
+            	<hr>
+            	<label class="control-label" for="nombreC">Nombre</label>
+            	<input type="text" class="form-control inputForm" id="nombreC" placeholder="Ingrese el nombre" required/>
+            	
+            	<label class="control-label" for="aPaternoC">Apellido Paterno</label>
+            	<input type="text" class="form-control inputForm" id="aPaternoC" placeholder="Ingrese el apellido paterno" required/>
+            	
+            	<label class="control-label" for="aMaternoC">Apellido Materno</label>
+            	<input type="text" class="form-control inputForm" id="aMaternoC" placeholder="Ingrese el apellido materno" required/>
+            	
+            	<label class="control-label" for="direccionC">Dirección</label>
+            	<input type="text" class="form-control inputForm" id="direccionC" placeholder="Ingrese la dirección" required/>
+            	
+            	<label class="control-label" for="correoC">Correo Electrónico</label>
+            	<input type="email" class="form-control inputForm" id="correoC" placeholder="Ingrese el correo electrónico" required/>
+            	
+            	<label class="control-label" for="telefonoC">Teléfono</label>
+            	<input type="number" class="form-control inputForm" id="telefonoC" placeholder="Ingrese el teléfono" required/>
+            	
+            	<label class="control-label" for="celularC">Celular</label>
+            	<input type="number" class="form-control inputForm" id="celularC" placeholder="Ingrese el celular" required/>
+            	
+            	<button type="button" class="btn btn-cancelar" data-dismiss="modal">Cancelar</button>
+            	<button class="btn btn-guardar">Guardar</button>
+            	
+            </form>         
+          </div>
+        </div>
+      </div>
+    </div>
+    
+</div>
+
+<div id="avisos" class="panel panel-default col-md-8 col-md-offset-2 footer navbar-fixed-bottom" ></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-es-MX.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?extension=.js&output=embed"></script>
+<script src="js/main.js"></script>
+<script src="js/mapa.js"></script>
+<script src="js/empresa.js"></script>
+</body>
+

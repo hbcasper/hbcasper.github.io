@@ -1,0 +1,100 @@
+<div class="row">
+	<ul class="breadcrumb bcheader">
+		<li>
+			Monitoreo y Control
+		</li>
+		<li class="active">
+			Dispositivos
+		</li>
+	</ul>
+	<div class="col-md-10">
+		<h1>Dispositivos</h1>
+	</div>
+	<div class="col-md-2">
+		<button type="button" class="btn btn-mapa pull-right">
+			<span class="glyphicon glyphicon-map-marker icon-map" aria-hidden="true"></span> Mapa
+		</button>
+	</div>
+</div>
+<hr>
+<div id="map-canvas" class="map-canvas esconder"></div>
+
+<table id="table" class="table table-no-bordered" data-pagination="true" data-search="true" data-toolbar=".toolbar">
+	<!--data-toggle="table"-->
+	<thead>
+		<tr>
+			<th data-field="nombre" data-sortable="true">Dispositivo</th>
+			<th data-field="area" data-sortable="true">Ubicación</th>
+			<th data-field="masInfo" data-formatter="masInfoFormatter" data-events="masInfoEventsDisp"></th>
+		</tr>
+	</thead>
+</table>
+<div id="modalInfoDispositivo" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content central-panel">
+			<div class="modal-header">
+				<ul class="breadcrumb col-md-11">
+					<li>
+						Monitoreo y Control
+					</li>
+					<li>
+						Dispositivos
+					</li>
+					<li class="active">
+						Dispositivo
+					</li>
+				</ul>
+				<button type="button" class="close col-md-1" data-dismiss="modal">
+					<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-10">
+						<h1 class="modal-title">Detalles de Dispositivo</h1>
+					</div>
+				</div>
+				<hr>
+
+				<label class="control-label">Nombre</label>
+				<p id="nombreInfo">
+					nombre
+				</p>
+
+				<label class="control-label">Fecha de creación</label>
+				<p id="fechaInfo">
+					fecha
+				</p>
+
+				<label class="control-label">Dispositivo</label>
+				<p id="claveInfo">
+					clave
+				</p>
+
+				<label class="control-label">Estado</label>
+				<p id="estadoInfo">
+					estado
+				</p>
+
+				<div id="map-canvasInfo" class="map-canvas"></div>
+
+				<h3>Sensores</h3>
+				<hr>
+				<table id="tableDisp" class="table table-no-bordered">
+					<!--data-toggle="table"-->
+					<thead>
+						<tr>
+						<th data-field="pin" data-sortable="true">Pin</th>
+						<th data-field="sensor" data-sortable="true">Sensor</th>
+						<th data-field="tipo" data-sortable="true">Tipo</th>
+						</tr>
+					</thead>
+				</table>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/data/mc-dispositivosData.js"></script>
+<script src="js/mc-dispositivos.js"></script>

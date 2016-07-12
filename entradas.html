@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>GRANHAS - Entradas</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/main.css">
+
+	</head>
+
+	<body>
+		<header></header>
+
+		<div class="container-fluid">
+			<div class="row">
+
+				<!--menu-->
+				<!--<div id="menu-nav" class="col-md-2"></div>-->
+
+				<!--main content-->
+				<div class="col-md-12">
+					<div id="menu-nav"></div>
+					<div id="chat"></div>
+					<div id="main-content" class="panel panel-default ">
+						<div class="panel-body central-panel">
+							<div class="row">
+								<ul class="breadcrumb bcheader">
+									<li>
+										<a href="#">Inventario</a>
+									</li>
+									<li>
+										<a href="#">Movimientos</a>
+									</li>
+									<li class="active">
+										<a href="#">Entradas</a>
+									</li>
+								</ul>
+								<div class="col-md-8">
+									<h1>Entradas</h1>
+								</div>
+								<div class="col-md-4">
+									<button type="button" class="btn btn-nuevo pull-right" data-toggle="modal" data-target="#modalNuevaEntrada">
+										<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Nueva Entrada
+									</button>
+								</div>
+								<!--<div class="toolbar">
+								<button type="button" class="btn btn-nuevaentrada" data-toggle="modal" data-target="#modalNuevaEntrada">
+								<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Nueva Entrada</button>
+								</div>-->
+							</div>
+							<table id="table" class="table table-no-bordered" data-pagination="true" data-search="true" data-toolbar=".toolbar">
+								<!--data-toggle="table"-->
+								<thead>
+									<tr>
+										<th data-field="clave" data-sortable="true">Clave</th>
+										<th data-field="almacen" data-sortable="true">Almacén</th>
+										<th data-field="naturaleza" data-sortable="true">Naturaleza</th>
+										<th data-field="fecha" data-sortable="true">Fecha</th>
+										<th data-field="editar" data-formatter="editarFormatter" data-events="editarEvents"></th>
+										<th data-field="masInfo" data-formatter="masInfoFormatter" data-events="masInfoEvents"></th>
+										<th data-field="eliminar" data-formatter="elimFormatter" data-events="elimEvents"></th>
+									</tr>
+								</thead>
+							</table>
+						</div>
+					</div>
+				</div>
+				<div id="modalNuevaEntrada" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content central-panel">
+							<div class="modal-header">
+								<!-- tambien con modal-body y sin header o con el h1 dentro del header-->
+								<ul class="breadcrumb col-md-11">
+									<li>
+										Inventario
+									</li>
+									<li>
+										Movimientos
+									</li>
+									<li>
+										Entrada
+									</li>
+									<li class="active modalBc">
+										Nueva Entrada
+									</li>
+								</ul>
+								<button type="button" class="close col-md-1" data-dismiss="modal">
+									<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<h1 class="modal-title modalTitle">Nueva Entrada</h1>
+								<hr>
+								<form class="nuevaEntrada">
+									<div class="row">
+										<div class="form-group col-md-4">
+											<select class="form-control inputForm" id="concepto" required>
+												<option disabled selected hidden value="">Seleccione un concepto</option>
+												<option>CN001</option>
+												<option>CN002</option>
+											</select>
+											<br>
+											<select class="form-control inputForm" id="almacen" required>
+												<option disabled selected hidden value="">Seleccione un almacen</option>
+												<option>AL001</option>
+												<option>AL002</option>
+											</select>
+										</div>
+										<div class="form-group col-md-4">
+											<label class="control-label" for="proovedor">Proovedor</label>
+											<input type="text" class="form-control inputForm" id="proovedor" placeholder="Ingrese nombre del proovedor" required/>
+										</div>
+										<div class="form-group col-md-4">
+											<label class="control-label" for="fechaEntrada">Fecha de entrada</label>
+											<input type="date" class="form-control inputForm" id="fechaEntrada" placeholder="DD-MM-AAAA" required/>
+										</div>
+									</div>
+									<hr>
+									<h4>Producto</h4>
+									<div class="row">
+										<div class="form-group col-md-4">
+											<label class="control-label" for="clave">Clave</label>
+											<input type="text" class="form-control inputForm" id="clave" placeholder="Ingrese la clave" required/>
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col-md-4">
+											<label class="control-label" for="producto">Producto</label>
+											<input type="text" class="form-control inputForm" id="producto" placeholder="Ingrese el producto" required/>
+										</div>
+										<div class="form-group col-md-8">
+											<label class="control-label" for="nombreProd">Nombre del producto</label>
+											<input type="text" class="form-control inputForm" id="nombreProd" placeholder="Ingrese el nombre del producto" required/>
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col-md-3">
+											<label class="control-label" for="unidades">Unidades</label>
+											<input type="number" class="form-control inputForm" id="unidades" placeholder="Ingrese numero de unidades" required/>
+										</div>
+										<div class="form-group col-md-3">
+											<label class="control-label" for="unMed">Unidad de medida</label>
+											<select class="form-control inputForm" id="unMed" required>
+												<option disabled selected hidden value="">Medida</option>
+												<option value="kg">Kg</option>
+												<option value="gr">Gr</option>
+												<option value="l">Lt</option>
+												<option value="ml">Mlts</option>
+												<option value="oz">Oz</option>
+											</select>
+										</div>
+										<div class="form-group col-md-3">
+											<label class="control-label" for="costo">Costo Unitario</label>
+											<input type="number" class="form-control inputForm" id="costo" placeholder="$00.00" required/>
+										</div>
+										<div class="form-group col-md-3">
+											<label class="control-label" for="total">Costo Total</label>
+											<input type="number" class="form-control inputForm" id="total" placeholder="$00.00" required/>
+										</div>
+									</div>
+									<div class="row">
+										<div class="form-group col-md-10">
+											<label class="control-label" for="descripcion">Descripción</label>
+											<textarea class="form-control inputForm" rows="3" id="descripcion" placeholder="Ingrese la descripción"></textarea>
+										</div>
+										<div class="col-md-2">
+											<br>
+											<button type="button" class="btn btn-cancelar" data-dismiss="modal">
+												Cancelar
+											</button>
+											<button class="btn btn-guardar">
+												Guardar
+											</button>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="modalInfoEntrada" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<!-- tambien con modal-body y sin header o con el h1 dentro del header-->
+								<ul class="breadcrumb col-md-11">
+									<li>
+										Inventario
+									</li>
+									<li>
+										Movimientos
+									</li>
+									<li>
+										Entrada
+									</li>
+									<li class="active">
+										Entrada
+									</li>
+								</ul>
+								<button type="button" class="close col-md-1" data-dismiss="modal">
+									<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="modal-body">
+								<div class="row">
+									<div class="col-md-10">
+										<h1 class="modal-title">Detalles de Entrada</h1>
+									</div>
+									<div class="col-md-2">
+										<button type="button" class="btn btn-editar editarInfo">
+											<span class="glyphicon glyphicon-pencil icon-pencil" aria-hidden="true"></span> Editar
+										</button>
+									</div>
+								</div>
+								<hr>
+								<div class="row">
+									<div class="form-group col-md-4">
+										<label class="control-label">Concepto</label>
+										<p id="conceptoInfo">
+											concepto
+										</p>
+										<br>
+										<label class="control-label">Almacén</label>
+										<p id="almacenInfo">
+											almacén
+										</p>
+									</div>
+									<div class="form-group col-md-4">
+										<label class="control-label">Proovedor</label>
+										<p id="proovedorInfo">
+											proovedor
+										</p>
+									</div>
+									<div class="form-group col-md-4">
+										<label class="control-label">Fecha de Entrada</label>
+										<p id="fechaInfo">
+											fecha
+										</p>
+									</div>
+								</div>
+								<hr>
+								<h4>Producto</h4>
+								<div class="row">
+									<div class="form-group col-md-4">
+										<label class="control-label">Clave</label>
+										<p id="claveInfo">
+											clave
+										</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group col-md-4">
+										<label class="control-label">Producto</label>
+										<p id="productoInfo">
+											producto
+										</p>
+									</div>
+									<div class="form-group col-md-8">
+										<label class="control-label">Nombre del producto</label>
+										<p id="nombreProdInfo">
+											nombre
+										</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group col-md-3">
+										<label class="control-label">Unidades</label>
+										<p id="unidadesInfo">
+											unidades
+										</p>
+									</div>
+									<div class="form-group col-md-3">
+										<label class="control-label">Unidad de medida</label>
+										<p id="unMedInfo">
+											medida
+										</p>
+									</div>
+									<div class="form-group col-md-3">
+										<label class="control-label">Costo Unitario</label>
+										<p id="costoInfo">
+											costo
+										</p>
+									</div>
+									<div class="form-group col-md-3">
+										<label class="control-label">Costo Total</label>
+										<p id="totalInfo">
+											total
+										</p>
+									</div>
+								</div>
+								<div class="row">
+									<div class="form-group col-md-10">
+										<label class="control-label">Descripción</label>
+										<p id="descripcionInfo">
+											descripcion
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="avisos" class="panel panel-default col-md-8 col-md-offset-2 footer navbar-fixed-bottom" ></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-es-MX.min.js"></script>
+		<script src="js/data/entradasData.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/entradas.js"></script>
+
+	</body>
+

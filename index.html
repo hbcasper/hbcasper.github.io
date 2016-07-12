@@ -1,381 +1,47 @@
 <!DOCTYPE html>
 <html lang="es">
-	<head>
-		<title>SPIT</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="css/main.css">
-
-	</head>
-
-	<body>
-
-		<!-- main header-->
-		<header>
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-2 col-md-offset-1">
-					
-											
-						<a href="index.html"><img src="its.png" style="width:100px;height:100px;">
-
-
-					</div>
-					<div class="col-md-8 header">
-						<ul class="nav nav-pills nav-justified">
-							<li>
-								<a href="#" class="proyectos"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Proyectos</a>
-							</li>
-							<li>
-								<a href="#" class="consulta"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Estadísticas</a>
-							</li>
-							<li>
-								<a href="#" class="propuestas"><span class="glyphicon glyphicon-star" aria-hidden="true"></span> Propuestas</a>
-							</li>
-							<li>
-								<a href="#" class="ajustes"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Ajustes</a>
-							</li>
-							<li class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Registro <span class="caret"></a>
-								<ul class="dropdown-menu">
-									<li>
-										<a href="#" class="cvu"><span class="glyphicon glyphicon-education" aria-hidden="true"></span> CVU</a>
-									</li>
-									<li>
-										<a href="#" class="organizaciones"><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span> Organizaciones</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-				</div>
+<head>
+	<title>GRANHAS</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+	
+</head>
+<body>
+	<header></header>
+	
+	<div class="container-fluid">
+		<div class="row">
+			
+		<!--menu-->
+		<!--<div id="menu-nav" class="col-md-2"></div>-->
+			
+		<!--main content-->
+		<div class="col-md-12">
+			<div id="menu-nav"></div>
+			<div id="chat"></div>
+			<div id="main-content" class="jumbotron">
+			  <h1>Bienvenido a Granhas</h1>
+			  <p><a class="btn btn-primary btn-lg togglemenu" href="#">Learn more</a></p>
+			  
 			</div>
-		</header>
-
-		<div class="container-fluid">
-			<div class="row">
-
-				<!-- menu-->
-				<div class="col-md-3">
-					<div class="menu">
-						<div id="menu"  class="panel panel-default">
-							<div  class="panel-body">
-								<ul class="nav nav-pills nav-stacked menu-cvu">
-
-									<li>
-										<a href="#" class="datosGen">Datos Generales</a>
-									</li>
-									<li>
-										<a href="#" class="proyectosInv">Proyectos de Investigación</a>
-									</li>
-									<li>
-										<a href="#" class="distinciones">Distinciones</a>
-									</li>
-									<li>
-										<a href="#" class="grupoInv">Grupo de Investigación</a>
-									</li>
-									<li>
-										<a href="#" class="libros">Libros</a>
-									</li>
-									<li>
-										<a href="#" class="idiomas">Idiomas</a>
-									</li>
-									<li>
-										<a href="#" class="divulgacion">Divulgación y difusión</a>
-									</li>
-									<li>
-										<a href="#" class="tesis">Tesis</a>
-									</li>
-									<li>
-										<a href="#" class="repTecnicos">Reportes Técnicos</a>
-									</li>
-									<li>
-										<a href="#" class="artPublicados">Artículos Publicados</a>
-									</li>
-									<li>
-										<a href="#" class="docencia">Docencia</a>
-									</li>
-									<li>
-										<a href="#" class="congresos">Congresos</a>
-									</li>
-									<li>
-										<a href="#" class="nivelAcademico">Nivel/Grado Académico</a>
-									</li>
-									<li>
-										<a href="#" class="reseña">Reseña</a>
-									</li>
-									<li>
-										<a href="#" class="estancias">Estancias</a>
-									</li>
-									<li>
-										<a href="#" class="patentes">Patentes</a>
-									</li>
-									<li>
-										<a href="#" class="autores">Autores</a>
-									</li>
-									<li>
-										<a href="#" class="desarrollosTec">Desarrollos Tecnológicos</a>
-									</li>
-									<li>
-										<a href="#" class="expLaboral">Experiencia Laboral</a>
-									</li>
-									<li>
-										<a href="#" class="derechosAutor">Derecho de autor</a>
-									</li>
-									<li>
-										<a href="#" class="desSoftware">Desarrollo de Software</a>
-									</li>
-								</ul>
-								<ul class="nav nav-pills nav-stacked menu-proyectos">
-									<h1>
-									<center>
-										Proyecto 1
-									</center></h1>
-
-									<a href="#" class="nuevo-proyecto">
-									<center>
-										<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#proyecto">
-											Cambiar de proyecto
-										</button>
-									</center> <!-- Modal -->
-									<div id="proyecto" class="modal fade" role="dialog">
-										<div class="modal-dialog">
-
-											<!-- Modal content-->
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal">
-														&times;
-													</button>
-													<h1 class="modal-title">Proyectos</h1>
-												</div>
-												<div class="modal-body">
-
-													<a href=""> Proyecto 1 </a>
-
-													<H5><small>Tipo 1</small></h5>
-														
-														<hr>
-
-												
-													<a href=""> Proyecto 2 </a>
-
-													<H5><small>Tipo 2</small></h5>
-	<hr>
-													
-													<H2>Organizacion 1</h2>
-														<hr>
-													<a href=""> Proyecto 3 </a>
-
-													<H5><small>Tipo 1</small></h5>
-														<hr>
-														<H2>Organizacion 2</h2>
-														<hr>
-													<a href=""> Proyecto 4 </a>
-
-													<H5><small>Tipo 1</small></h5>
-
-
-												
-
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default" data-dismiss="modal">
-														Cerrar
-													</button>
-												</div>
-											</div>
-
-										</div>
-									</div>
-									<hr>
-									<li>
-										<a href="#" class="nuevo-proyecto">Nuevo Proyecto</a>
-									</li>
-									<hr>
-									<li>
-										<a href="#" class="proy-detalle">Detalle</a>
-									</li>
-									<li>
-										<a href="#" class="proy-desarrollo">Desarrollo</a>
-									</li>
-									<li>
-										<a href="#" class="proy-equipo">Equipo</a>
-									</li>
-									<li>
-										<a href="#" class="proy-documentos">Documentos</a>
-									</li>
-									<li>
-										<a href="#" class="proy-pagos">Pagos</a>
-									</li>
-									<li>
-										<a href="#" class="proy-salud">Salud del Proyecto</a>
-									</li>
-									<li>
-										<br>
-										<button type="button" class="btn btn-default">
-											<span class="glyphicon glyphicon-download" aria-hidden="true"></span> Descargar proyecto
-										</button>
-									</li>
-								</ul>
-
-								<ul class="nav nav-pills nav-stacked menu-ajustes">
-
-									<li>
-										<a href="#" class="colores">Colores</a>
-									</li>
-
-								</ul>
-								<ul class="nav nav-pills nav-stacked menu-organizaciones">
-									<h1>
-									<center>
-										Organizaciones
-									</center></h1>
-
-									<!--<center><button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#organizacion">
-									Cambiar de organización
-									</button></center>-->
-
-									<!-- Modal -->
-									<div id="organizacion" class="modal fade" role="dialog">
-										<div class="modal-dialog">
-
-											<!-- Modal content-->
-											<div class="modal-content">
-												<div class="modal-header">
-													<button type="button" class="close" data-dismiss="modal">
-														&times;
-													</button>
-													<h1 class="modal-title">Organizaciones</h1>
-												</div>
-												<div class="modal-body">
-													<a href=""> Organización 1 </a>
-													<hr>
-													<a href=""> Organización 2 </a>
-													<hr>
-													<a href=""> Organización 3 </a>
-												</div>
-												<div class="modal-footer">
-													<button type="button" class="btn btn-default" data-dismiss="modal">
-														Cerrar
-													</button>
-												</div>
-											</div>
-
-										</div>
-									</div>
-
-									<hr>
-									<li>
-										<a href="#" class="org-nueva">Nueva Organizacion</a>
-									</li>
-
-									<hr>
-
-								</ul>
-								<ul class="nav nav-pills nav-stacked menu-propuestas">
-									<li>
-										<a href="#" class="prop-enviadas">
-										<button class="btn btn-default">
-											3
-										</button> Enviadas</a>
-									</li>
-									<li>
-
-										<a href="#" class="prop-recibidas">
-										<button class="btn btn-default">
-											3
-										</button> Recibidas</a>
-									</li>
-									<li>
-										<a href="#" class="prop-contrapropuesta">
-										<button class="btn btn-default">
-											3
-										</button> Contrapropuestas</a>
-									</li>
-								</ul>
-								<ul class="nav nav-pills nav-stacked menu-consulta">
-									<li>
-										<h1>Búsqueda de proyecto</h1>
-										<br>
-										<div class="col-sm-8 center form-group">
-
-											<input type="text" class=" form-control inputForm " id="clave" required />
-										</div>
-										<div class="row">
-											<div class="col-sm-3 center">
-												<br>
-												<button type="button" class="btn btn-primary guardar">
-													Buscar
-												</button>
-											</div>
-										</div>
-										<div class="row center">
-											<div class="tags">
-												<br>
-												<label>Tipo de Proyecto</label>
-												<br>
-												<input type="checkbox" rel="arts" />
-												Técnico </label>
-												<br>
-
-												<input type="checkbox" rel="computers" />
-												Tecnológico </label>
-												<br>
-
-												<input type="checkbox" rel="health" />
-												Teórico </label>
-												<br>
-
-												<input type="checkbox" rel="video-games" />
-												Proyecto Social </label>
-												<br>
-												<br>
-												<br>
-												<label>Area de Investigación</label>
-												<br>
-												<input type="checkbox" rel="arts" />
-												Ciencias </label>
-												<br>
-
-												<input type="checkbox" rel="computers" />
-												TIC </label>
-												<br>
-
-												<input type="checkbox" rel="health" />
-												Medio Ambiente </label>
-												<br>
-
-												<input type="checkbox" rel="video-games" />
-												Sustentabilidad </label>
-												<br>
-											</div>
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-				</div>
-
-				<!-- content-->
-				<div class="col-md-9">
-					<div class="main-content">
-						<div class="jumbotron">
-							<h1>SPIT</h1>
-							<p>
-								Sistema de Proyectos de Innovación Tecnológica
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		</div>
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<script src="js/main.js"></script>
-	</body>
+		 
+		 <!--chat-->
+		 
+		 </div>	
+		 
+	</div>
+	
+	 
+	<div id="avisos" class="panel panel-default col-md-8 col-md-offset-2 footer navbar-fixed-bottom" ></div>
+	
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+	
+</body>

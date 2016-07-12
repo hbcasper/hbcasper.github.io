@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>GRANHAS - Usuarios</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+		<link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/main.css">
+
+	</head>
+
+	<body>
+		<header></header>
+		<br>
+
+		<div class="container-fluid">
+
+			<div class="row">
+				<!--menu-->
+				<div class="col-md-12">
+					<div id="menu-nav"></div>
+					<div id="chat"></div>
+					<div id="main-content" class="panel panel-default ">
+					
+								<div class="panel-body central-panel">
+									<div class="row">
+										<ul class="breadcrumb bcheader">
+											<li><a href="#">
+												Administración</a>
+											</li>
+											<li><a href="#">
+												Usuarios</a>
+											</li>
+											<li class="active"><a href="#">
+												Usuarios</a>
+											</li>
+										</ul>
+										<div class="col-md-8">
+											<h1>Usuarios</h1>
+										</div>
+										<div class="col-md-4">
+											<button type="button" class="btn btn-nuevo pull-right" data-toggle="modal" data-target="#modalNuevoUsuario">
+												<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Nuevo Usuario
+											</button>
+										</div>
+									</div>
+									<table id="table" class="table table-no-bordered" data-pagination="true" data-search="true" data-toolbar=".toolbar">
+										<!--data-toggle="table"-->
+										<thead>
+											<tr>
+												<th data-field="nombre" data-sortable="true">Nombre</th>
+												<th data-field="empresa" data-sortable="true">Empresa</th>
+												<th data-field="direccion" data-sortable="true">Dirección</th>
+												<th data-field="fecha" data-sortable="true">Fecha de registro</th>
+												<th data-field="editar" data-formatter="editarFormatter" data-events="editarEvents"></th>
+												<th data-field="masInfo" data-formatter="masInfoFormatter" data-events="masInfoEvents"></th>
+												<th data-field="eliminar" data-formatter="elimFormatter" data-events="elimEvents"></th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+							</div>
+						</div>
+
+						
+					</div>
+				</div>
+
+				<div id="modalNuevoUsuario" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content central-panel">
+							<div class="modal-header">
+								<ul class="breadcrumb col-md-11">
+									<li>
+										Administración
+									</li>
+									<li>
+										Usuarios
+									</li>
+									<li>
+										Usuarios
+									</li>
+									<li class="active modalBc">
+										Nuevo Usuario
+									</li>
+								</ul>
+								<button type="button" class="close col-md-1" data-dismiss="modal">
+									<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+								</button>
+							</div>
+							<div class="modal-body">
+
+								<h1 class="modal-title modalTitle">Nuevo Usuario</h1>
+								<hr>
+
+								<form class="nuevoUsuario">
+									<div class="row">
+
+										<div class="col-md-9 form-group">
+											<div class="row">
+												<div class="col-md-4 form-group">
+
+													<label class="control-label" for="nombre">Nombre</label>
+													<a data-toggle="tooltip" class="safe" data-placement="bottom" title="Es seguro modificar este campo ">
+													<input type="text" class="form-control inputForm" id="nombre" placeholder="Ingrese el nombre" required/>
+													</a>
+												</div>
+												<div class="col-md-4 form-group">
+													<label class="control-label" for="aPaterno">Apellido Paterno</label>
+													<a data-toggle="tooltip" class="precaution" data-placement="bottom" title="Modificar este campo
+													podría afectar a otros aspectos del sistema ">
+													<input type="text" class="form-control inputForm" id="aPaterno" placeholder="Ingrese el apellido paterno" required/>
+													</a>
+												</div>
+												<div class="col-md-4 form-group">
+
+													<label class="control-label" for="aMaterno">Apellido Materno</label>
+													<a data-toggle="tooltip" class="warning" data-placement="bottom" title="Modificar este campo
+													podría afectar gravemente a otros aspectos del sistema ">
+													<input type="text" class="form-control inputForm" id="aMaterno" placeholder="Ingrese el apellido materno" required/>
+													</a>
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-6 form-group">
+													<label class="control-label" for="usuario">Nombre de Usuario</label>
+													<input type="text" class="form-control inputForm" id="usuario" placeholder="Ingrese el nombre de usuario" required/>
+
+												</div>
+												<div class="col-md-6 form-group">
+													<label class="control-label" for="correo">Correo Electrónico</label>
+													<input type="email" class="form-control inputForm" id="correo" placeholder="Ingrese el correo electrónico" required/>
+
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-12 form-group">
+													<label class="control-label" for="direccion">Dirección</label>
+													<input type="text" class="form-control inputForm" id="direccion" placeholder="Ingrese la dirección" required/>
+
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-6 form-group">
+													<label class="control-label" for="telefono">Teléfono Fijo</label>
+													<input type="number" class="form-control inputForm" id="telefono" placeholder="Ingrese el teléfono" required/>
+
+												</div>
+												<div class="col-md-6 form-group">
+													<label class="control-label" for="celular">Teléfono Celular</label>
+													<input type="number" class="form-control inputForm" id="celular" placeholder="Ingrese el celular" required/>
+
+												</div>
+											</div>
+
+											<div class="row">
+												<div class="col-md-6 form-group">
+													<select class="form-control inputForm" id="sucursal" required>
+														<option disabled selected hidden value="">Seleccione sucursal</option>
+														<option>SC01</option>
+														<option>SC02</option>
+													</select>
+
+												</div>
+												<div class="col-md-6 form-group">
+													<select class="form-control inputForm" id="area" required>
+														<option disabled selected hidden value="">Seleccione área</option>
+														<option>AR01</option>
+														<option>AR02</option>
+													</select>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-3 form-group">
+
+											<img src="http://dev.alurosu.com/bobo/chat/data/img/admin/default.png" id="imagen" class="img-rounded img-responsive" alt="Imagen de usuario" width="140px" height="140px">
+											<input type="file" id="imagenUsuario" accept="image/x-png, image/gif, image/jpeg, image/jpg">
+
+											<hr>
+											<div class="formgroup">
+												<div class="row">
+													<div class="col-md-12 formgroup">
+														<label class="control-label" for="estadoRadio">Estado</label>
+													</div>
+												</div>
+
+												<div class="row">
+
+													<div class="col-md-12 formgroup">
+														<div class="radio">
+															<label class="radio active">
+																<input type="radio" name="estadoRadio" id="estadoRadioActivo" value="activo" checked>
+																Activo </label>
+
+															<div class="radio">
+																<label class="radio">
+																	<input type="radio" name="estadoRadio" id="estadoRadioSuspendido" value="suspendido">
+																	Suspendido </label>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+													<div class="col-md-12 formgroup">
+														<label class="control-label" for="perfilRadio">Perfil</label>
+														<div class="radio">
+															<label class="radio active">
+																<input type="radio" name="perfilRadio" id="perfilRadioOperativo" value="operativo" checked>
+																Operativo </label>
+														</div>
+														<div class="radio">
+															<label class="radio">
+																<input type="radio" name="perfilRadio" id="perfilRadioEjecutivo" value="ejecutivo">
+																Ejecutivo </label>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="row">
+										<div class="col-md-9"></div>
+										<div class="col-md-3">
+
+											<button type="button" class="btn btn-cancelar" data-dismiss="modal">
+												Cancelar
+											</button>
+											<button class="btn btn-guardar">
+												Guardar
+											</button>
+										</div>
+									</div>
+
+							</div>
+						</div>
+
+					</div>
+					</form>
+
+				</div>
+
+			</div>
+		</div>
+		</div>
+		<div id="modalInfoUsuario" class="modal fade" role="dialog">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<ul class="breadcrumb col-md-11">
+							<li>
+								Administración
+							</li>
+							<li>
+								Usuarios
+							</li>
+							<li>
+								Usuarios
+							</li>
+							<li class="active">
+								Usuario
+							</li>
+						</ul>
+						<button type="button" class="close col-md-1" data-dismiss="modal">
+							<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-10">
+								<h1 class="modal-title">Detalles de Usuario</h1>
+							</div>
+							<div class="col-md-2">
+								<button type="button" class="btn btn-editar editarInfo">
+									<span class="glyphicon glyphicon-pencil icon-pencil" aria-hidden="true"></span> Editar
+								</button>
+							</div>
+						</div>
+						<hr>
+						<label class="control-label">Nombre</label>
+						<p id="nombreInfo">
+							nombre
+						</p>
+
+						<label class="control-label">Apellido Paterno</label>
+						<p id="aPaternoInfo">
+							paterno
+						</p>
+
+						<label class="control-label">Apellido Materno</label>
+						<p id="aMaternoInfo">
+							materno
+						</p>
+
+						<label class="control-label" >Nombre de Usuario</label>
+						<p id="usuarioInfo">
+							usuario
+						</p>
+
+						<label class="control-label">Correo Electrónico</label>
+						<p id="correoInfo">
+							correo
+						</p>
+
+						<label class="control-label">Dirección</label>
+						<p id="direccionInfo">
+							direccion
+						</p>
+
+						<img id="imagenInfo" class="img-rounded img-responsive" alt="Imagen de usuario" width="140px" height="140px">
+
+						<label class="control-label">Teléfono Fijo</label>
+						<p id="telefonoInfo">
+							telefono
+						</p>
+
+						<label class="control-label">Sucursal</label>
+						<p id="sucursalInfo">
+							sucursal
+						</p>
+
+						<label class="control-label">Área</label>
+						<p id="areaInfo">
+							area
+						</p>
+
+						<label class="control-label" for="estadoRadioInfo">Estado</label>
+						<div class="radio">
+							<label class="radio active">
+								<input type="radio" name="estadoRadioInfo" id="estadoRadioActivoInfo" disabled value="activo">
+								Activo </label>
+						</div>
+						<div class="radio">
+							<label class="radio">
+								<input type="radio" name="estadoRadioInfo" id="estadoRadioSuspendidoInfo" disabled value="suspendido" checked>
+								Suspendido </label>
+						</div>
+						<label class="control-label" for="perfilRadioInfo">Perfil</label>
+						<div class="radio">
+							<label class="radio active">
+								<input type="radio" name="perfilRadioInfo" id="perfilRadioOperativoInfo" disabled value="operativo">
+								Operativo </label>
+						</div>
+						<div class="radio">
+							<label class="radio">
+								<input type="radio" name="perfilRadioInfo" id="perfilRadioEjecutivoInfo" disabled value="ejecutivo" checked>
+								Ejecutivo </label>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-2"></div>
+		
+		</div>
+		</div>
+		
+
+		<div id="avisos" class="panel panel-default col-md-8 col-md-offset-2 footer navbar-fixed-bottom" ></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-es-MX.min.js"></script>
+		<script src="js/data/usuariosData.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/usuarios.js"></script>
+		<script>
+			$(document).ready(function() {
+				$('[data-toggle="tooltip"]').tooltip();
+			});
+		</script>
+	</body>
+

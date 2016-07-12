@@ -1,0 +1,295 @@
+<div class="row">
+	<ul class="breadcrumb bcheader">
+		<li>
+			<a href="#">Monitoreo y Control</a>
+		</li>
+		<li>
+			<a href="#">Monitoreo</a>
+		</li>
+		<li class="active">
+			<a href="#">Variables</a>
+		</li>
+	</ul>
+	<div class="col-md-8">
+		<h1>Variables de Control</h1>
+	</div>
+	<div class="col-md-4">
+		<button type="button" class="btn btn-nuevo pull-right" data-toggle="modal" data-target="#modalNuevaVariable">
+			<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Nueva Variable
+		</button>
+	</div>
+</div>
+<table id="table" class="table table-no-bordered" data-pagination="true" data-search="true" data-toolbar=".toolbar" data-checkbox-header="false">
+	<!--data-toggle="table"-->
+	<thead>
+		<tr>
+			<th data-field="clave" data-sortable="true">Clave</th>
+			<th data-field="nombre" data-sortable="true">Nombre</th>
+			<th data-field="sucursal" data-sortable="true">Sucursal</th>
+			<th data-field="area" data-sortable="true">Área</th>
+			<th data-field="tipo" data-sortable="true">Tipo</th>
+			<th data-field="minimo" data-sortable="true">Mínimo</th>
+			<th data-field="maximo" data-sortable="true">Máximo</th>
+			<th data-field="estado" data-checkbox="true" data-sortable="true">Estado</th>
+			<th data-field="editar" data-formatter="editarFormatter" data-events="editarEventsVariables"></th>
+			<th data-field="masInfo" data-formatter="masInfoFormatter" data-events="masInfoEventsVariables"></th>
+			<th data-field="eliminar" data-formatter="elimFormatter" data-events="elimEventsVariables"></th>
+		</tr>
+	</thead>
+</table>
+<div id="modalNuevaVariable" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content central-panel">
+			<div class="modal-header">
+				<ul class="breadcrumb col-md-11">
+					<li>
+						Monitoreo y Control
+					</li>
+					<li>
+						Monitoreo
+					</li>
+					<li>
+						Variables
+					</li>
+					<li class="active modalBc">
+						Nueva Variable
+					</li>
+				</ul>
+				<button type="button" class="close col-md-1" data-dismiss="modal">
+					<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<h1 class="modal-title modalTitle">Nueva Variable</h1>
+				<hr>
+				<form class="nuevaVariable">
+
+					<label class="control-label" for="nombre">Nombre</label>
+					<input type="text" class="form-control inputForm" id="nombre" placeholder="Ingrese el nombre de la variable" required/>
+
+					<select class="form-control inputForm" id="tipo" required>
+						<option disabled selected hidden value="">Tipo de variable</option>
+						<option>Tipo 1</option>
+						<option>Tipo 2</option>
+					</select>
+
+					<label class="control-label">Rango de Riesgo</label>
+					<label class="control-label"> 0 </label>
+					<input type="text" id="rangeSlider" data-provide="slider" data-slider-ticks="[0,100]" data-slider-value="[10,90]">
+					<label class="control-label"> 100</label>
+
+					<h3>Lugar</h3>
+					<hr>
+
+					<select class="form-control inputForm" id="sucursal" required>
+						<option disabled selected hidden value="">Sucursal</option>
+						<option>SC01</option>
+						<option>SC02</option>
+					</select>
+
+					<select class="form-control inputForm" id="granja" required>
+						<option disabled selected hidden value="">Granja</option>
+						<option>GR01</option>
+						<option>GR02</option>
+					</select>
+
+					<select class="form-control inputForm" id="area" required>
+						<option disabled selected hidden value="">Área</option>
+						<option>AR01</option>
+						<option>AR02</option>
+					</select>
+
+					<h4>Controles</h4>
+					<hr>
+					<label class="control-label">Control 1</label>
+					<label class="checkbox-inline active">
+						<input type="checkbox" id="control1min" value="min">
+						Mínimo </label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="control1max" value="max">
+						Máximo </label>
+
+					<label class="control-label">Control 2</label>
+					<label class="checkbox-inline active">
+						<input type="checkbox" id="control2min" value="min">
+						Mínimo </label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="control2max" value="max">
+						Máximo </label>
+
+					<label class="control-label">Control 3</label>
+					<label class="checkbox-inline active">
+						<input type="checkbox" id="control3min" value="min">
+						Mínimo </label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="control3max" value="max">
+						Máximo </label>
+
+					<label class="control-label">Control 4</label>
+					<label class="checkbox-inline active">
+						<input type="checkbox" id="control4min" value="min">
+						Mínimo </label>
+					<label class="checkbox-inline">
+						<input type="checkbox" id="control4max" value="max">
+						Máximo </label>
+
+					<h4>Alarmas</h4>
+					<hr>
+
+					<label class="control-label">Visual</label>
+					<input type="checkbox" id="visual" value="visual" checked>
+					<input type="text" id="visualSlider" data-provide="slider" data-slider-step="1" data-slider-value="1" data-slider-ticks="[0,100]">
+					<label class="control-label"> Min</label>
+
+					<label class="control-label">Sonora</label>
+					<input type="checkbox" id="sonora" value="sonora" checked>
+					<input type="text" id="sonoraSlider" data-provide="slider" data-slider-step="1" data-slider-value="1" data-slider-ticks="[0,100]">
+					<label class="control-label"> Min</label>
+
+					<label class="control-label">Correo</label>
+					<input type="checkbox" id="correo" value="correo" checked>
+					<input type="text" id="correoSlider" data-provide="slider" data-slider-step="1" data-slider-value="1" data-slider-ticks="[0,100]" >
+					<label class="control-label"> Min</label>
+
+					<button type="button" class="btn btn-cancelar" data-dismiss="modal">
+						Cancelar
+					</button>
+					<button class="btn btn-guardar">
+						Guardar
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modalInfoVariable" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<ul class="breadcrumb col-md-11">
+					<li>
+						Monitoreo y Control
+					</li>
+					<li>
+						Monitoreo
+					</li>
+					<li>
+						Variables
+					</li>
+					<li class="active modalBc">
+						Variable
+					</li>
+				</ul>
+				<button type="button" class="close col-md-1" data-dismiss="modal">
+					<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-10">
+						<h1 class="modal-title">Detalles de Variable</h1>
+					</div>
+					<div class="col-md-2">
+						<button type="button" class="btn btn-editar editarInfo">
+							<span class="glyphicon glyphicon-pencil icon-pencil" aria-hidden="true"></span> Editar
+						</button>
+					</div>
+				</div>
+				<hr>
+
+				<label class="control-label">Nombre</label>
+				<p id="nombreInfo">
+					nombre
+				</p>
+
+				<label class="control-label">Tipo de variable</label>
+				<p id="tipoInfo">
+					tipo
+				</p>
+
+				<label class="control-label">Rango de Riesgo</label>
+				<label class="control-label">Mínimo</label>
+				<p id="minimoInfo">
+					minimo
+				</p>
+				<label class="control-label">Máximo</label>
+				<p id="maximoInfo">
+					maximo
+				</p>
+
+				<h3>Lugar</h3>
+				<hr>
+				<label class="control-label" >Sucursal</label>
+				<p id="sucursalInfo">
+					sucursal
+				</p>
+
+				<label class="control-label" >Granja</label>
+				<p id="granjaInfo">
+					granja
+				</p>
+
+				<label class="control-label" > Área</label>
+				<p id="areaInfo">
+					area
+				</p>
+
+				<h3>Controles</h3>
+				<hr>
+
+				<label class="control-label">Control 1</label>
+				<label class="checkbox-inline active">
+					<input type="checkbox" id="control1minInfo" disabled value="min">
+					Mínimo </label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="control1maxInfo" disabled value="max">
+					Máximo </label>
+
+				<label class="control-label">Control 2</label>
+				<label class="checkbox-inline active">
+					<input type="checkbox" id="control2minInfo" disabled value="min">
+					Mínimo </label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="control2maxInfo" disabled value="max">
+					Máximo </label>
+
+				<label class="control-label">Control 3</label>
+				<label class="checkbox-inline active">
+					<input type="checkbox" id="control3minInfo" disabled value="min">
+					Mínimo </label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="control3maxInfo" disabled value="max">
+					Máximo </label>
+
+				<label class="control-label">Control 4</label>
+				<label class="checkbox-inline active">
+					<input type="checkbox" id="control4minInfo" disabled value="min">
+					Mínimo </label>
+				<label class="checkbox-inline">
+					<input type="checkbox" id="control4maxInfo" disabled value="max">
+					Máximo </label>
+
+				<label class="control-label">Visual</label>
+				<input type="checkbox" id="visualInfo" disabled value="visual">
+				<p id="visualSliderInfo">
+					0 min
+				</p>
+
+				<label class="control-label">Sonora</label>
+				<input type="checkbox" id="sonoraInfo" disabled value="sonora">
+				<p id="sonoraSliderInfo">
+					0 min
+				</p>
+
+				<label class="control-label">Correo</label>
+				<input type="checkbox" id="correoInfo" disabled value="correo">
+				<p id="correoSliderInfo">
+					0 min
+				</p>
+			</div>
+		</div>
+	</div>
+
+</div>
+<script src="js/data/variablesData.js"></script>
+<script src="js/variables.js"></script>

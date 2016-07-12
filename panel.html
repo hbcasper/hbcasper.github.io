@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>GRANHAS - Panel</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+	
+</head>
+
+<body>
+	<header></header><br>
+	
+<div class="container-fluid">
+  <div class="row">
+    <!--menu-->
+	<div class="col-md-12">
+					<div id="menu-nav"></div>
+					<div id="chat"></div>
+					<div id="main-content" class="panel panel-default ">
+        <div class="panel-body central-panel">
+         	<div class="row">
+         	  <ul class="breadcrumb bcheader">
+	              <li><a href="#">Administración</a></li>
+	              <li><a href="#">Ajustes</a></li>
+	              <li class="active"><a href="#">Panel de configuración</a></li>
+	          </ul>
+	          <div class="col-md-10">
+	            <h1>Panel de Configuración</h1>
+	          </div>
+	          <div class="col-md-2">
+	          </div>
+          	</div>
+          	<hr>
+          	
+          	<form class="nuevoUsuario">
+          		<h3>Colores</h3>
+          		<hr>
+          		<label class="control-label" for="cprimario">Color dominante</label>
+          		<input type="color" class="form-control inputColor" id="cprimario" value="#24323E" required/>
+            	
+          		<label class="control-label" for="csecundario">Color secundario</label>
+          		<input type="color" class="form-control inputColor" id="csecundario" value="#47A8AA" required/>
+          		
+          		<h3>Etiquetas</h3>
+          		<hr>
+          		
+          		<h4>Estructuras</h4>
+          		<label class="control-label" for="nivelE1">Nivel 1</label>
+          		<input type="text" class="form-control inputForm" id="nivelE1" placeholder="Nivel 1" value="Sucursales" required/>
+          		<label class="control-label" for="nivelE2">Nivel 2</label>
+          		<input type="text" class="form-control inputForm" id="nivelE2" placeholder="Nivel 2" value="Centros de Producción" required/>
+          		<label class="control-label" for="nivelE3">Nivel 3</label>
+          		<input type="text" class="form-control inputForm" id="nivelE3" placeholder="Nivel 3" value="Sitios" required/>
+          		<label class="control-label" for="nivelE4">Nivel 4</label>
+          		<input type="text" class="form-control inputForm" id="nivelE4" placeholder="Nivel 4" value="Naves" required/>
+          		<label class="control-label" for="nivelE5">Nivel 5</label>
+          		<input type="text" class="form-control inputForm" id="nivelE5" placeholder="Nivel 5" value="Áreas" required/>
+          		
+          		<h4>Productos</h4>
+          		<label class="control-label" for="nivelP1">Nivel 1</label>
+          		<input type="text" class="form-control inputForm" id="nivelP1" placeholder="Nivel 1" value="Productos" required/>
+          		<label class="control-label" for="nivelP2">Nivel 2</label>
+          		<input type="text" class="form-control inputForm" id="nivelP2" placeholder="Nivel 2" value="Líneas" required/>
+          		<label class="control-label" for="nivelP3">Nivel 3</label>
+          		<input type="text" class="form-control inputForm" id="nivelP3" placeholder="Nivel 3" value="Grupo de líneas" required/>
+          		<label class="control-label" for="nivelP4">Nivel 4</label>
+          		<input type="text" class="form-control inputForm" id="nivelP4" placeholder="Nivel 4" value="Catálogos" required/>
+          		
+          		<button class="btn btn-guardar">Guardar</button>
+          			
+          	</form>
+          	
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="avisos" class="panel panel-default col-md-8 col-md-offset-2 footer navbar-fixed-bottom" ></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-es-MX.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/panel.js"></script>
+</body>
+

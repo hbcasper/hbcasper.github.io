@@ -1,0 +1,133 @@
+<div class="row">
+	<ul class="breadcrumb bcheader">
+		<li>
+			Monitoreo y Control
+		</li>
+		<li>
+			Monitoreo
+		</li>
+		<li class="active">
+			Sensores
+		</li>
+	</ul>
+	<div class="col-md-8">
+		<h1>Sensores</h1>
+	</div>
+	<div class="col-md-4">
+		<button type="button" class="btn btn-mapa pull-right">
+			<span class="glyphicon glyphicon-map-marker icon-map" aria-hidden="true"></span> Mapa
+		</button>
+		<button type="button" class="btn btn-filtro pull-right">
+			<span class="glyphicon glyphicon-filter icon-filtro" aria-hidden="true"></span> Filtrar
+		</button>
+	</div>
+</div>
+<hr>
+<div id="filtros" class="filtros esconder">
+	<form class="filtrosForm">
+		<label class="checkbox-inline">
+			<input type="checkbox" class="filtro" id="temperatura" value="Temperatura" checked>
+			Temperatura </label>
+		<label class="checkbox-inline">
+			<input type="checkbox" class="filtro" id="ph" value="PH" checked>
+			PH </label>
+		<label class="checkbox-inline">
+			<input type="checkbox" class="filtro" id="dioxido" value="Dióxido" checked>
+			Dióxido </label>
+		<label class="checkbox-inline">
+			<input type="checkbox" class="filtro" id="amoniaco" value="Amoniaco" checked>
+			Amoniaco </label>
+		<label class="checkbox-inline">
+			<input type="checkbox" class="filtro" id="radiacon" value="Radiación" checked>
+			Radiación </label>
+		<label class="checkbox-inline">
+			<input type="checkbox" class="filtro" id="lluvia" value="Lluvia" checked>
+			Lluvia </label>
+		<label class="checkbox-inline">
+			<input type="checkbox" class="filtro" id="velocidad" value="Velocidad" checked>
+			Velocidad </label>
+		<label class="checkbox-inline">
+			<input type="checkbox" class="filtro" id="luz" value="Luz Ambiental" checked>
+			Luz Ambiental </label>
+	</form>
+	<hr>
+</div>
+<div id="map-canvas" class="map-canvas esconder"></div>
+
+<table id="table" class="table table-no-bordered" data-pagination="true" data-search="true" data-toolbar=".toolbar" data-checkbox-header="false">
+	<!--data-toggle="table"-->
+	<thead>
+		<tr>
+			<th data-field="clave" data-sortable="true">Sensor</th>
+			<th data-field="dispositivo" data-sortable="true">Dispositivo</th>
+			<th data-field="tipo" data-sortable="true">Tipo</th>
+			<th data-field="estado" data-sortable="true">Estado</th>
+			<th data-field="lectura" data-sortable="true">Última lectura</th>
+			<th data-field="tablero" data-checkbox="true" data-sortable="true">Tablero</th>
+			<th data-field="masInfo" data-formatter="masInfoFormatter" data-events="masInfoEventsSensores"></th>
+		</tr>
+	</thead>
+</table>
+<div id="modalInfoSensor" class="modal fade" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content central-panel">
+			<div class="modal-header">
+				<ul class="breadcrumb col-md-11">
+					<li>
+						Monitoreo y Control
+					</li>
+					<li>
+						Monitoreo
+					</li>
+					<li>
+						Sensores
+					</li>
+					<li class="active">
+						Sensor
+					</li>
+				</ul>
+				<button type="button" class="close col-md-1" data-dismiss="modal">
+					<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="row">
+					<div class="col-md-10">
+						<h1 class="modal-title">Detalles de Sensor</h1>
+					</div>
+				</div>
+				<hr>
+
+				<label class="control-label">Nombre</label>
+				<p id="nombreInfo">
+					nombre
+				</p>
+
+				<label class="control-label">Fecha de creación</label>
+				<p id="fechaInfo">
+					fecha
+				</p>
+
+				<label class="control-label">Tipo</label>
+				<p id="tipoInfo">
+					tipo
+				</p>
+
+				<label class="control-label">Estado</label>
+				<p id="estadoInfo">
+					estado
+				</p>
+
+				<div id="map-canvasInfo" class="map-canvas"></div>
+
+				<h3>Estadísticas</h3>
+				<hr>
+				<canvas id="grafica" class="grafica"></canvas>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="js/data/sensoresData.js"></script>
+<script src="js/sensores.js"></script>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>GRANHAS - Licencias</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+	
+</head>
+
+<body>
+	<header></header><br>
+	
+<div class="container-fluid">
+  <div class="row">
+    <!--menu-->
+	<div class="col-md-12">
+					<div id="menu-nav"></div>
+					<div id="chat"></div>
+					<div id="main-content" class="panel panel-default ">
+        <div class="panel-body central-panel">
+         	<div class="row">
+         	  <ul class="breadcrumb bcheader">
+	              <li><a href="#">Administración</a></li>
+	              <li><a href="#">Superadministración</a></li>
+	              <li class="active"><a href="#">Licencias</a></li>
+	          </ul>
+	          <div class="col-md-8">
+	            <h1>Licencias</h1>
+	          </div>
+	          <div class="col-md-4">
+	            <button type="button" class="btn btn-nuevo pull-right" data-toggle="modal" data-target="#modalNuevaLicencia">
+	            	<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Nueva Licencia</button>
+	          </div>
+          	</div>
+          <table id="table" class="table table-no-bordered" data-pagination="true" data-search="true" data-toolbar=".toolbar"> <!--data-toggle="table"--> 
+            <thead>
+              <tr> 
+                <th data-field="nombre" data-sortable="true">Nombre</th>
+                <th data-field="rfc" data-sortable="true">RFC</th>
+                <th data-field="direccion" data-sortable="true">Dirección</th>
+                <th data-field="tipo" data-sortable="true">Tipo de Licencia</th>
+                <th data-field="fecha" data-sortable="true">Fecha de registro</th>
+                <th data-field="editar" data-formatter="editarFormatter" data-events="editarEvents"></th>
+                <th data-field="masInfo" data-formatter="masInfoFormatter" data-events="masInfoEvents"></th>
+                <th data-field="eliminar" data-formatter="elimFormatter" data-events="elimEvents"></th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="modalNuevaLicencia" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content central-panel">
+          <div class="modal-header"> 
+            <ul class="breadcrumb col-md-11">
+              <li>Administración</li>
+              <li>Superadministración</li>
+              <li>Licencias</li>
+              <li class="active modalBc">Nueva Licencia</li>
+            </ul>
+            <button type="button" class="close col-md-1" data-dismiss="modal">
+            	<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+          </div>
+          <div class="modal-body">
+            	<h1 class="modal-title modalTitle">Nueva Licencia</h1>
+            	<hr>
+            <form class="nuevaLicencia">
+            	<h3>Empresa</h3>
+            	<hr>
+            	
+            	<label class="control-label" for="clave">Clave</label>
+            	<input type="text" class="form-control inputForm" id="clave" placeholder="Ingrese la clave" required/>
+            	
+            	<label class="control-label" for="nombre">Nombre</label>
+            	<input type="text" class="form-control inputForm" id="nombre" placeholder="Ingrese el nombre de la empresa" required/>
+            	
+            	<label class="control-label" for="rfc">RFC</label>
+            	<input type="text" class="form-control inputForm" id="rfc" placeholder="Ingrese el RFC" required/>
+            	
+            	<label class="control-label" for="direccion">Dirección</label>
+            	<input type="text" class="form-control inputForm" id="direccion" placeholder="Ingrese la dirección" required/>
+            	
+            	<h3>Licencia</h3>
+            	<hr>
+            	
+            	<h4>Módulos</h4>
+            	<hr>
+            	<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="modulos" id="modulosAdministracion" value="administracion"> Administración
+				</label>
+				</div>
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="modulos" id="modulosMonitoreo" value="monitoreo"> Monitoreo
+				</label>
+				</div>
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="modulos" id="modulosInventarios" value="inventarios"> Inventarios
+				</label>
+				</div>
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="modulos" id="modulosProovedores" value="proovedores"> Proovedores
+				</label>
+				</div>
+				
+				<label class="control-label" for="sucursales">Número de Sucursales</label>
+				<input type="number" class="form-control inputForm" id="sucursales" placeholder="0" required/>
+            	
+				<label class="control-label" for="usuarios">Número de Usuarios</label>
+				<input type="number" class="form-control inputForm" id="usuarios" placeholder="0" required/>
+            	
+				<label class="control-label" for="inicioVigencia">Inicio de Vigencia</label>
+            	<input type="date" class="form-control inputForm" id="inicioVigencia" placeholder="DD-MM-AAAA" required/>
+            	
+            	<label class="control-label" for="finVigencia">Fin de Vigencia</label>
+            	<input type="date" class="form-control inputForm" id="finVigencia" placeholder="DD-MM-AAAA" required/>
+            	
+            	<button type="button" class="btn btn-cancelar" data-dismiss="modal">Cancelar</button>
+            	<button class="btn btn-guardar">Guardar</button>
+            		
+            </form>         
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modalInfoLicencia" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <ul class="breadcrumb col-md-11">
+              <li>Administración</li>
+              <li>Superadministración</li>
+              <li>Licencias</li>
+              <li class="active">Licencia</li>
+            </ul>
+            <button type="button" class="close col-md-1" data-dismiss="modal">
+            	<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+          </div>
+          <div class="modal-body">
+          	<div class="row">
+	          	<div class="col-md-10">
+	            	<h1 class="modal-title">Detalles de Licencia</h1>
+	            </div>
+	            <div class="col-md-2">
+	            	<button type="button" class="btn btn-editar editarInfo">
+	        		<span class="glyphicon glyphicon-pencil icon-pencil" aria-hidden="true"></span> Editar</button>
+	        	</div>
+        	</div>
+        	<hr>
+        	<h3>Empresa</h3>
+            	<hr>
+            	
+            	<label class="control-label">Clave</label>
+            	<p id="claveInfo">clave</p>
+            	
+            	<label class="control-label">Nombre</label>
+            	<p id="nombreInfo">nombre</p>
+            	
+            	<label class="control-label">RFC</label>
+            	<p id="rfcInfo">rfc</p>
+            	
+            	<label class="control-label">Dirección</label>
+            	<p id="direccionInfo">direccion</p>
+            	
+            	<h3>Licencia</h3>
+            	<hr>
+            	
+            	<h4>Módulos</h4>
+            	<div class="checkbox">
+				<label class="checkbox active">
+					<input type="checkbox" name="modulos" id="modulosAdministracionInfo" disabled value="administracion"> Administración
+				</label>
+				</div>
+				<div class="checkbox">
+				<label class="checkbox active">
+					<input type="checkbox" name="modulos" id="modulosMonitoreoInfo" disabled value="monitoreo"> Monitoreo
+				</label>
+				</div>
+				<div class="checkbox">
+				<label class="checkbox active">
+					<input type="checkbox" name="modulos" id="modulosInventariosInfo" disabled value="inventarios"> Inventarios
+				</label>
+				</div>
+				<div class="checkbox">
+				<label class="checkbox active">
+					<input type="checkbox" name="modulos" id="modulosProovedoresInfo" disabled value="proovedores"> Proovedores
+				</label>
+				</div>
+				
+				<label class="control-label">Número de Sucursales</label>
+				<p id="sucursalesInfo">0</p>
+				
+				<label class="control-label">Número de Usuarios</label>
+				<p id="usuariosInfo">0</p>
+				
+				<label class="control-label">Inicio de Vigencia</label>
+				<p id="inicioVigenciaInfo">inicio</p>
+				
+				<label class="control-label">Fin de Vigencia</label>
+				<p id="finVigenciaInfo">fin</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="avisos" class="panel panel-default col-md-8 col-md-offset-2 footer navbar-fixed-bottom" ></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-es-MX.min.js"></script>
+<script src="js/data/sa-licenciasData.js"></script>
+<script src="js/main.js"></script>
+<script src="js/sa-licencias.js"></script>
+</body>
+

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>GRANHAS - Módulos</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+	
+</head>
+
+<body>
+	<header></header><br>
+	
+<div class="container-fluid">
+  <div class="row">
+    <!--menu-->
+<div class="col-md-12">
+					<div id="menu-nav"></div>
+					<div id="chat"></div>
+					<div id="main-content" class="panel panel-default ">
+        <div class="panel-body central-panel">
+         	<div class="row">
+         	  <ul class="breadcrumb bcheader">
+	              <li><a href="#">Administración</a></li>
+	              <li><a href="#">Superadministración</a></li>
+	              <li class="active"><a href="#">Módulos</a></li>
+	          </ul>
+	          <div class="col-md-8">
+	            <h1>Módulos</h1>
+	          </div>
+	          <div class="col-md-4">
+	            <button type="button" class="btn btn-nuevo pull-right" data-toggle="modal" data-target="#modalNuevoModulo">
+	            	<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Nuevo Módulo</button>
+	          </div>
+          	</div>
+          <table id="table" class="table table-no-bordered" data-pagination="true" data-search="true" data-toolbar=".toolbar"> <!--data-toggle="table"--> 
+            <thead>
+             <tr>
+                <th data-field="clave" data-sortable="true">Clave</th>
+                <th data-field="nombre" data-sortable="true">Nombre</th>
+                <th data-field="modelo" data-sortable="true">Modelo</th>
+                <th data-field="tipo" data-sortable="true">Tipo</th>
+                <th data-field="fecha" data-sortable="true">Fecha de Registro</th>
+                <th data-field="editar" data-formatter="editarFormatter" data-events="editarEvents"></th>
+                <th data-field="masInfo" data-formatter="masInfoFormatter" data-events="masInfoEvents"></th>
+                <th data-field="eliminar" data-formatter="elimFormatter" data-events="elimEvents"></th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="modalNuevoModulo" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content central-panel">
+          <div class="modal-header"> 
+            <ul class="breadcrumb col-md-11">
+              <li>Administración</li>
+              <li>Superadministración</li>
+              <li>Módulos</li>
+              <li class="active modalBc">Nuevo Módulo</li>
+            </ul>
+            <button type="button" class="close col-md-1" data-dismiss="modal">
+            	<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+          </div>
+          <div class="modal-body">
+            	<h1 class="modal-title modalTitle">Nuevo Módulo</h1>
+            	<hr>
+            <form class="nuevoModulo">
+            	
+            	<label class="control-label" for="clave">Clave</label>
+				<input type="text" class="form-control inputForm" id="clave" placeholder="Ingrese la clave de la empresa" required/>
+            	
+            	<label class="control-label" for="nombre">Nombre</label>
+				<input type="text" class="form-control inputForm" id="nombre" placeholder="Ingrese el nombre de la empresa" required/>
+								
+            	<select class="form-control inputForm" id="dispositivo" required>
+              		<option disabled selected hidden value="">Dispositivo Coordinador</option>
+              		<option>DP01</option>
+              		<option>DP02</option>
+         		</select>
+            				
+            	<label class="control-label" for="modelo">Modelo</label>
+				<input type="text" class="form-control inputForm" id="modelo" placeholder="Ingrese el modelo" required/>
+            	
+            	<label class="control-label" for="tipo">Tipo</label>
+				<input type="text" class="form-control inputForm" id="tipo" placeholder="Ingrese el tipo" required/>
+            	
+            	<label class="control-label" for="descripcion">Descripción</label>
+				<input type="text" class="form-control inputForm" id="descripcion" placeholder="Ingrese la descripcion" required/>
+				
+				<div id="map-canvas" class="map-canvas"></div>
+				
+            	<select class="form-control inputForm" id="sucursal" required>
+              		<option disabled selected hidden value="">Sucursal</option>
+              		<option>SC01</option>
+              		<option>SC02</option>
+         		</select>
+         		
+            	<select class="form-control inputForm" id="centroProd" required>
+              		<option disabled selected hidden value="">Centro de Producción</option>
+              		<option>CP01</option>
+              		<option>CP02</option>
+         		</select>
+         		
+            	<select class="form-control inputForm" id="sitio" required>
+              		<option disabled selected hidden value="">Sitio</option>
+              		<option>ST01</option>
+              		<option>ST02</option>
+         		</select>
+         		
+         		<select class="form-control inputForm" id="nave" required>
+              		<option disabled selected hidden value="">Nave</option>
+              		<option>NV01</option>
+              		<option>NV02</option>
+         		</select>
+         		
+            	<select class="form-control inputForm" id="area" required>
+              		<option disabled selected hidden value="">Área</option>
+              		<option>AR01</option>
+              		<option>AR02</option>
+         		</select>
+				
+				<h4>Sensores</h4>
+				<hr>
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="sensores" id="sp0" value="pin0"> Pin 0
+				</label>
+				</div>
+				<select class="form-control inputForm esconder" id="sensor0">
+              		<option disabled selected hidden value="">Tipo de sensor</option>
+              		<option>Temperatura</option>
+              		<option>Tiempo</option>
+ 				</select>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="sensores" id="sp1" value="pin1"> Pin 1
+				</label>
+				</div>
+				<select class="form-control inputForm esconder" id="sensor1">
+              		<option disabled selected hidden value="">Tipo de sensor</option>
+              		<option>Temperatura</option>
+              		<option>Tiempo</option>
+ 				</select>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="sensores" id="sp2" value="pin2"> Pin 2
+				</label>
+				</div>
+				<select class="form-control inputForm esconder" id="sensor2">
+              		<option disabled selected hidden value="">Tipo de sensor</option>
+              		<option>Temperatura</option>
+              		<option>Tiempo</option>
+ 				</select>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="sensores" id="sp3" value="pin3"> Pin 3
+				</label>
+				</div>
+				<select class="form-control inputForm esconder" id="sensor3">
+              		<option disabled selected hidden value="">Tipo de sensor</option>
+              		<option>Temperatura</option>
+              		<option>Tiempo</option>
+ 				</select>
+            	
+            	<h4>Controles</h4>
+				<hr>
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="controles" id="cp0" value="pin0"> Pin 0
+				</label>
+				</div>
+				<select class="form-control inputForm esconder" id="control0">
+              		<option disabled selected hidden value="">Tipo de control</option>
+              		<option>Temperatura</option>
+              		<option>Tiempo</option>
+ 				</select>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="controles" id="cp1" value="pin1"> Pin 1
+				</label>
+				</div>
+				<select class="form-control inputForm esconder" id="control1">
+              		<option disabled selected hidden value="">Tipo de control</option>
+              		<option>Temperatura</option>
+              		<option>Tiempo</option>
+ 				</select>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="controles" id="cp2" value="pin2"> Pin 2
+				</label>
+				</div>
+				<select class="form-control inputForm esconder" id="control2">
+              		<option disabled selected hidden value="">Tipo de control</option>
+              		<option>Temperatura</option>
+              		<option>Lluvia</option>
+ 				</select>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="controles" id="cp3" value="pin3"> Pin 3
+				</label>
+				</div>
+				<select class="form-control inputForm esconder" id="control3">
+              		<option disabled selected hidden value="">Tipo de control</option>
+              		<option>Temperatura</option>
+              		<option>Lluvia</option>
+ 				</select>
+ 				<button type="button" class="btn btn-cancelar" data-dismiss="modal">Cancelar</button>
+            	<button class="btn btn-guardar">Guardar</button>
+            </form>         
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modalInfoModulo" class="modal fade" role="dialog"> 
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <ul class="breadcrumb col-md-11">
+              <li>Administración</li>
+              <li>Superadministración</li>
+              <li>Módulos</li>
+              <li class="active">Módulo</li>
+            </ul>
+            <button type="button" class="close col-md-1" data-dismiss="modal">
+            	<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+          </div>
+          <div class="modal-body">
+          	<div class="row">
+	          	<div class="col-md-10">
+	            	<h1 class="modal-title">Detalles de Módulo</h1>
+	            </div>
+	            <div class="col-md-2">
+	            	<button type="button" class="btn btn-editar editarInfo">
+	        		<span class="glyphicon glyphicon-pencil icon-pencil" aria-hidden="true"></span> Editar</button>
+	        	</div>
+        	</div>
+        	<hr>
+        	
+        		<label class="control-label">Clave</label>
+				<p id="claveInfo">clave</p>            	
+            	
+            	<label class="control-label">Nombre</label>
+				<p id="nombreInfo">nombre</p>
+				
+				<label class="control-label">Dispositivo</label>
+				<p id="dispositivoInfo">dispositivo</p>
+				            				
+            	<label class="control-label">Modelo</label>
+            	<p id="modeloInfo">modelo</p>
+            	
+            	<label class="control-label">Tipo</label>
+            	<p id="tipoInfo">tipo</p>
+            	
+            	<label class="control-label">Descripción</label>
+            	<p id="descripcionInfo">descripcion</p>
+            	
+            	<div id="map-canvasInfo" class="map-canvas"></div>
+            	
+            	<label class="control-label">Sucursal</label>
+            	<p id="sucursalInfo">sucursal</p>
+            	
+            	<label class="control-label">Centro de producción</label>
+            	<p id="centroProdInfo">centro prod</p>
+            	
+            	<label class="control-label">Sitio</label>
+            	<p id="sitioInfo">sitio</p>
+            	
+            	<label class="control-label">Nave</label>
+            	<p id="naveInfo">nave</p>
+            	
+            	<label class="control-label">Área</label>
+            	<p id="areaInfo">area</p>
+				
+				<h4>Sensores</h4>
+				<hr>
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="sensores" id="sp0Info" disabled value="pin0"> Pin 0
+				</label>
+				</div>
+				<p id="sensor0Info">sensor0</p>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="sensores" id="sp1Info" disabled value="pin1"> Pin 1
+				</label>
+				</div>
+				<p id="sensor1Info">sensor1</p>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="sensores" id="sp2Info" disabled value="pin2"> Pin 2
+				</label>
+				</div>
+				<p id="sensor2Info">sensor2</p>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="sensores" id="sp3Info" disabled value="pin3"> Pin 3
+				</label>
+				</div>
+				<p id="sensor3Info">sensor3</p>
+            	
+            	<h4>Controles</h4>
+				<hr>
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="controles" id="cp0Info" disabled value="pin0"> Pin 0
+				</label>
+				</div>
+				<p id="control0Info">control0</p>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="controles" id="cp1Info" disabled value="pin1"> Pin 1
+				</label>
+				</div>
+				<p id="control1Info">control1</p>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="controles" id="cp2Info" disabled value="pin2"> Pin 2
+				</label>
+				</div>
+				<p id="control2Info">control2</p>
+				
+				<div class="checkbox">
+				<label class="checkbox">
+					<input type="checkbox" name="controles" id="cp3Info" disabled value="pin3"> Pin 3
+				</label>
+				</div>
+				<p id="control3Info">control3</p>
+        	  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</div>
+
+<div id="avisos" class="panel panel-default col-md-8 col-md-offset-2 footer navbar-fixed-bottom" ></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-es-MX.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?&extension=.js&output=embed"></script>
+<script src="js/data/sa-modulosData.js"></script>
+<script src="js/main.js"></script>
+<script src="js/mapa.js"></script>
+<script src="js/sa-modulos.js"></script>
+</body>
+

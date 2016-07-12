@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>GRANHAS - Perfiles</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,300italic,400,400italic,500italic,500,700,700italic' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/main.css">
+	
+</head>
+
+<body>
+	<header></header><br>
+	
+<div class="container-fluid">
+  <div class="row">
+    <!--menu-->
+	<div class="col-md-12">
+					<div id="menu-nav"></div>
+					<div id="chat"></div>
+					<div id="main-content" class="panel panel-default ">
+        <div class="panel-body central-panel">
+         	<div class="row">
+         	  <ul class="breadcrumb bcheader">
+	              <li><a href="#">Administración</a></li>
+	              <li><a href="#">Usuarios</a></li>
+	              <li class="active"><a href="#">Perfiles</a></li>
+	          </ul>
+	          <div class="col-md-8">
+	            <h1>Perfiles</h1>
+	          </div>
+	          <div class="col-md-4">
+	            <button type="button" class="btn btn-nuevo pull-right" data-toggle="modal" data-target="#modalNuevoPerfil">
+	            	<span class="glyphicon glyphicon-plus-sign icon-plus" aria-hidden="true"></span> Nuevo Perfil</button>
+	          </div>
+          	</div>
+          <table id="table" class="table table-no-bordered" data-pagination="true" data-search="true" data-toolbar=".toolbar"> <!--data-toggle="table"--> 
+            <thead>
+              <tr> 
+                <th data-field="perfil" data-sortable="true">Perfil</th>
+                <th data-field="empresaP" data-sortable="true">Empresa</th>
+                <th data-field="fecha" data-sortable="true">Fecha de Registro</th>
+                <th data-field="editar" data-formatter="editarFormatter" data-events="editarEvents"></th>
+                <th data-field="masInfo" data-formatter="masInfoFormatter" data-events="masInfoEvents"></th>
+                <th data-field="eliminar" data-formatter="elimFormatter" data-events="elimEvents"></th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div id="modalNuevoPerfil" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content central-panel">
+          <div class="modal-header"> 
+            <ul class="breadcrumb col-md-11">
+              <li>Administración</li>
+              <li>Usuarios</li>
+              <li>Perfiles</li>
+              <li class="active modalBc">Nuevo Perfil</li>
+            </ul>
+            <button type="button" class="close col-md-1" data-dismiss="modal">
+            	<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+          </div>
+          <div class="modal-body">
+            	<h1 class="modal-title modalTitle">Nuevo Perfil</h1>
+            	<hr>
+            <form class="nuevoPerfil">
+            	<div class="row">
+            		<div class="form-group col-md-8">
+	            	<label class="control-label" for="perfil">Nombre</label>
+	            	<input type="text" class="form-control inputForm" id="perfil" placeholder="Ingrese el nombre del perfil" required/>
+	            	</div>
+            	</div>
+            	<hr>
+            	<h3>Permisos</h3>
+            	<div class="row">
+            		<div class="form-group col-md-8">
+            			<h4>Administrador</h4>
+            			<div class="row">
+            				<div class="form-group col-md-4">
+					            <label class="control-label">Sucursales </label>
+					        </div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="sucursalesVer" value="ver" checked> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="sucursalesEditar" value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="sucursalesCrear" value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="sucursalesElim" value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Usuarios </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="usuariosVer" value="ver" checked> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="usuariosEditar" value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="usuariosCrear" value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="usuariosElim" value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">	
+				            	<label class="control-label">Empresa </label>
+				            </div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="empresaVer" value="ver" checked> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="empresaEditar" value="editar"> Editar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Preferencias </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="preferenciasVer" value="ver" checked> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="preferenciasEditar" value="editar"> Editar
+								</label>
+							</div>
+						</div>
+						<h4>Monitoreo y Control</h4>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Dispositivos </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="dispositivosVer" value="ver" checked> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="dispositivosEditar" value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="dispositivosCrear" value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="dispositivosElim" value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Áreas </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="areasVer" value="ver" checked> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="areasEditar" value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="areasCrear" value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="areasElim" value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Eventos </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="eventosVer" value="ver" checked> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="eventosEditar" value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="eventosCrear" value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="eventosElim" value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Variables de riesgo </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="variablesVer" value="ver" checked> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="variablesEditar" value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="variablesCrear" value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="variablesElim" value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<h4>Recibir notificaciones</h4>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Eventos Programados </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								    <input type="checkbox" id="eventosCheck" value="activo" checked> Activado
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Control Remoto </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								    <input type="checkbox" id="controlCheck" value="activo" checked> Activado
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Estados de control </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								    <input type="checkbox" id="estadosCheck" value="activo" checked> Activado
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Control de accesos </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								    <input type="checkbox" id="accesosCheck" value="activo" checked> Activado
+								</label>
+							</div>
+						</div>	
+					</div>
+					<div class="form-group col-md-4">
+						<h4>Chat</h4>
+						<div class="radio">
+						<label class="radio active">
+							<input type="radio" name="chatRadio" id="chatRadiosGlobal" value="global"> Global
+						</label>
+						</div>
+						<div class="radio">
+						<label class="radio">
+							<input type="radio" name="chatRadio" id="chatRadiosDesact" value="desactivado" checked> Desactivado
+						</label>
+						</div>
+						<br>
+						<button type="button" class="btn btn-cancelar" data-dismiss="modal">Cancelar</button>
+	            		<button class="btn btn-guardar">Guardar</button>
+            		</div>
+            	</div>
+            </form>         
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="modalInfoPerfil" class="modal fade" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <ul class="breadcrumb col-md-11">
+              <li>Administración</li>
+              <li>Usuarios</li>
+              <li>Perfiles</li>
+              <li class="active">Perfil</li>
+            </ul>
+            <button type="button" class="close col-md-1" data-dismiss="modal">
+            	<span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span></button>
+          </div>
+          <div class="modal-body">
+          	<div class="row">
+	          	<div class="col-md-10">
+	            	<h1 class="modal-title">Detalles de Perfil</h1>
+	            </div>
+	            <div class="col-md-2">
+	            	<button type="button" class="btn btn-editar editarInfo">
+	        		<span class="glyphicon glyphicon-pencil icon-pencil" aria-hidden="true"></span> Editar</button>
+	        	</div>
+        	</div>
+        	<hr>
+        		<label class="control-label" for="perfil">Nombre</label>
+            	<p id="perfilInfo">perfil</p>
+            	<hr>
+            	<h3>Permisos</h3>
+            	<br>
+            	<div class="row">
+            		<div class="form-group col-md-8">
+            			<h4>Administrador</h4>
+            			<div class="row">
+            				<div class="form-group col-md-4">
+					            <label class="control-label">Sucursales </label>
+					        </div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="sucursalesVerInfo" disabled value="ver"> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="sucursalesEditarInfo" disabled value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="sucursalesCrearInfo" disabled value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="sucursalesElimInfo" disabled value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Usuarios </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="usuariosVerInfo" disabled value="ver" > Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="usuariosEditarInfo" disabled value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="usuariosCrearInfo" disabled value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="usuariosElimInfo" disabled value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">	
+				            	<label class="control-label">Empresa </label>
+				            </div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="empresaVerInfo" disabled value="ver" > Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="empresaEditarInfo" disabled value="editar"> Editar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Preferencias </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="preferenciasVerInfo" disabled value="ver"> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="preferenciasEditarInfo" disabled value="editar"> Editar
+								</label>
+							</div>
+						</div>
+						<h4>Monitoreo y Control</h4>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Dispositivos </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="dispositivosVerInfo" disabled value="ver"> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="dispositivosEditarInfo" disabled value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="dispositivosCrearInfo" disabled value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="dispositivosElimInfo" disabled value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Áreas </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="areasVerInfo" disabled value="ver"> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="areasEditarInfo" disabled value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="areasCrearInfo" disabled value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="areasElimInfo" disabled value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Eventos </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="eventosVerInfo" disabled value="ver"> Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="eventosEditarInfo" disabled value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="eventosCrearInfo" disabled value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="eventosElimInfo" disabled value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Variables de riesgo </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								  <input type="checkbox" id="variablesVerInfo" disabled value="ver" > Ver
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="variablesEditarInfo" disabled value="editar"> Editar
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="variablesCrearInfo" disabled value="crear"> Crear
+								</label>
+								<label class="checkbox-inline">
+								  <input type="checkbox" id="variablesElimInfo" disabled value="eliminar"> Eliminar
+								</label>
+							</div>
+						</div>
+						<h4>Recibir notificaciones</h4>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Eventos Programados </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								    <input type="checkbox" id="eventosCheckInfo" disabled value="activo"> Activado
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Control Remoto </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								    <input type="checkbox" id="controlCheckInfo" disabled value="activo"> Activado
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Estados de control </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								    <input type="checkbox" id="estadosCheckInfo" disabled value="activo"> Activado
+								</label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group col-md-4">
+								<label class="control-label">Control de accesos </label>
+							</div>
+					        <div class="form-group col-md-8">
+				            	<label class="checkbox-inline active">
+								    <input type="checkbox" id="accesosCheckInfo" disabled value="activo"> Activado
+								</label>
+							</div>
+						</div>	
+					</div>
+					<div class="form-group col-md-4">
+						<h4>Chat</h4>
+						<div class="radio">
+						<label class="radio active">
+							<input type="radio" name="chatRadio" id="chatRadiosGlobalInfo" disabled value="global"> Global
+						</label>
+						</div>
+						<div class="radio">
+						<label class="radio">
+							<input type="radio" name="chatRadio" id="chatRadiosDesactInfo" disabled value="desactivado"> Desactivado
+						</label>
+						</div>
+						<br>
+            		</div>
+            	</div>   
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+</div>
+<div id="avisos" class="panel panel-default col-md-8 col-md-offset-2 footer navbar-fixed-bottom" ></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/locale/bootstrap-table-es-MX.min.js"></script>
+<script src="js/data/perfilesData.js"></script>
+<script src="js/main.js"></script>
+<script src="js/perfiles.js"></script>
+</body>
+
